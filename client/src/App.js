@@ -14,7 +14,7 @@ const App = () => {
 
   //Functions
 
-  //Return (render)
+  //Render (return)
   return (
     <div className="App">
       <NavBar />

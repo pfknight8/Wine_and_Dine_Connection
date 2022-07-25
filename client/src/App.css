@@ -1,0 +1,11 @@
+.App {
+  background-color: #404040;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: grey;
+  color: maroon;
+  height: 4em;
+}

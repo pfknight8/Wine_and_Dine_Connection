@@ -8,6 +8,7 @@ const WineSchema = new Schema(
     category: { type: String, required: true },
     country: { type: String, required: true },
     region: { type: String, required: true },
+    sweetness: { type: String, required: true },
     price_range: { type: String, required: true },
     image: {type: String, required: false }
   },

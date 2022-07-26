@@ -1,8 +1,9 @@
 
 
 const About = () => {
-  //
-  //
+  // State
+  // useEffects
+  // Functions
   // Render (return)
   return (
     <div className="About">

@@ -1,4 +1,4 @@
-const WineCard = ({ wine }) => {
+const WineCard = ({ wine, onClick }) => {
   //
   return (
     <div className="wineCard">
@@ -8,15 +8,12 @@ const WineCard = ({ wine }) => {
       <div className="infoBox">
         <h2>{wine.name}</h2>
         <ul className="infoList">
-          <li>Category: {wine.category}</li>
+          <li>Category: {wine.category}</li> {/*May move to conditional formatting with css*/}
           <li>Varietal: {wine.varietal}</li>
           <li>Nation of Origin: {wine.country}</li>
-          <li>Region: {wine.region}</li>
-          <li>Price Range: {wine.price_range}</li>
         </ul>
-        <p>{wine.description}</p>
       </div>
-      <p>Click for details</p>
+      <p onClick={onClick}>Click for details</p>
     </div>
   )
 }

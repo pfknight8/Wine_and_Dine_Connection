@@ -35,9 +35,9 @@ const App = () => {
       <main>
         <p>This is where the pages will render.</p>
         <Routes>
-          <Route path="/" element={ <Home /> } />
+          <Route path="/" element={ <Home handleWineSelect={handleWineSelect} handleMealSelect={handleMealSelect} /> } />
           <Route path="/about" element={ <About /> } />
-          <Route path="/wine/:wineId" element={<WineDetails handleSelect={handleWineSelect}/>} />
+          <Route path="/wine/:wineId" element={<WineDetails wine={wineSelect}/>} />
           <Route path="/meal/:mealId" element={<MealDetails />} />
         </Routes>
       </main>

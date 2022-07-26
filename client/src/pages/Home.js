@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import WineCard from '../components/wineCard'
 
-const Home = (props) => {
+const Home = ({ handleWineSelect, handleMealSelect }) => {
   //State
   const [wines, setWines] = useState([])
   //useEffects
   useEffect(() => {
     const getWines = async () => {
       const res = await axios.get('http://localhost:3001/wines/winelist')
-      console.log(res.data.wines)
       setWines(res.data.wines)
     }
     getWines()
@@ -20,7 +19,7 @@ const Home = (props) => {
     <div className="homePage">
       {wines?.map((wine, index) => (
         <div key={wine._id}>
-          <WineCard wine={wine}/>
+          <WineCard wine={wine} onClick={() => handleWineSelect(wine)}/>
         </div>
       ))}
     </div>

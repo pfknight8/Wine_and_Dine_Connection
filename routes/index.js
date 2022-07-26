@@ -7,9 +7,9 @@ router.get('/wines/winelist', WineController.getAllWines)
 
 router.get('/wines/:id', WineController.getWine)
 
-router.post('/wines', WineController.placeWine)
+router.put('/wines/:id', WineController.updateWine)
 
-router.put('/wines', WineController.updateWine)
+router.post('/wines', WineController.placeWine)
 
 // Routes for the meals page
 // router.get()

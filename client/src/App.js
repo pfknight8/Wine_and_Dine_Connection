@@ -20,6 +20,10 @@ const App = () => {
       <NavBar />
       <main>
         <p>This is where the pages will render.</p>
+        <Routes>
+          <Route path="/" element={ <Home /> } />
+          <Route path="/about" element={ <About /> } />
+        </Routes>
       </main>
     </div>
   )

@@ -33,7 +33,18 @@ const placeWine = async (req, res) => {
 
 const updateWine = async (req, res) => {
   try {
-    return res.status(200).json({})
+    let { id } = req.params
+    // let wineToUpdate = 
+    await Wine.findOneAndUpdate({ _id: id }, req.body)
+    return res.status(200).json("Done")
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteWine = async (req, res) => {
+  try {
+    let { id } = req.params
   } catch (error) {
     return res.status(500).send(error.message)
   }

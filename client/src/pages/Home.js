@@ -16,7 +16,7 @@ const Home = (props) => {
         navigate('/wines')
         break
       case "searchMeal":
-        // navigate('/meals')
+        navigate('/meals')
         break
     }
   }
@@ -25,7 +25,7 @@ const Home = (props) => {
     <div className="homePage">
       <div id="searchBtns">
         <button id="searchWine" onClick={handleNavClick}>Browse Wines</button>
-        <button id="searchMeal">Browse Meals</button>
+        <button id="searchMeal" onClick={handleNavClick}>Browse Meals</button>
       </div>
     </div>
   )

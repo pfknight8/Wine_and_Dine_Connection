@@ -24,9 +24,11 @@ const App = () => {
     // will navigate
     navigate(`/wines/${wine._id}`)
   }
-  const handleMealSelect = (wine) => {
+  const handleMealSelect = (meal) => {
     // will do a "set" function
+    setMealSelect(meal)
     // will navigate
+    navigate(`/meals/${meal._id}`)
   }
 
   //Render (return)

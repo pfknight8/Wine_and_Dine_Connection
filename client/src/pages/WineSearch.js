@@ -28,7 +28,7 @@ const WineSearch = ({handleWineSelect}) => {
         toggleAdding(false)
         break
       default:
-        alert("Something went aggregiously wrong!")
+        alert("Something went egregiously wrong!")
     }
   }
   

@@ -68,7 +68,8 @@ const WineForm = ({wine, passedStateToggle}) => {
       try {
         await axios.post(`http://localhost:3001/wines`, formBody)
         setFormBody({})
-        passedStateToggle(false)
+        // passedStateToggle(false)
+        navigate('/')
       } catch (error) {
         console.log('Error!')
       }

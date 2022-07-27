@@ -44,7 +44,13 @@ const updateWine = async (req, res) => {
 
 const deleteWine = async (req, res) => {
   try {
-    let { id } = req.params
+    const { id } = req.params
+    const deletedWine = await Wine.findByIdAndDelete({ _id: id })
+    if (deletedWine) {
+      return res.status(200).send("Wine successfully deleted!")
+    } else {
+      throw new Error("Wine not found!")
+    }
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -54,5 +60,6 @@ module.exports = {
   getAllWines,
   getWine,
   placeWine,
+  deleteWine,
   updateWine
 }

@@ -5,7 +5,14 @@ const MealCard = ({ meal, onClick }) => {
   // Render (return)
   return (
     <div className="mealCard">
-      <p>So...</p>
+      <div className="img-content">
+        {meal.image ? <img scr={meal.image} alt={meal.name} /> : null}
+      </div>
+      <div className="infoBox">
+        <h2>Title: {meal.name}</h2>
+        <p>Category: {meal.category}</p> {/*May move to conditional formatting with css*/}
+      </div>
+      <p onClick={onClick}>Click for details</p>
     </div>
   )
 }

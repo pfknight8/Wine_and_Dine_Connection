@@ -13,7 +13,6 @@ const WineDetails = ({ wine }) => {
   // Functions
 
   const editClick = (e) => {
-    console.log(e.target.innerHTML)
     switch(e.target.innerHTML) {
       case "Edit":
         toggleEditing(true)
@@ -51,6 +50,9 @@ const WineDetails = ({ wine }) => {
   return (
     <div className="wineDetails">
       <h1>Howdy!</h1>
+      <div className="img-content">
+        {wine.image ? <img scr={wine.image} alt={wine.name} /> : null}
+      </div>
       <h3>{wine.name}</h3>
       <p>{wine.description}</p>
       <ul className="infoList">

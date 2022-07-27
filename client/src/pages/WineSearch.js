@@ -17,7 +17,6 @@ const WineSearch = ({handleWineSelect}) => {
   },[adding])
   //Functions
   const addClick = (e) => {
-    console.log(e.target.innerHTML)
     switch(e.target.innerHTML) {
       case "Add a Wine":
         toggleAdding(true)

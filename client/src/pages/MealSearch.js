@@ -38,7 +38,7 @@ const MealSearch = ({handleMealSelect}) => {
       <div id="searchOptions">
         <button>Search By:</button>
       </div>
-      {adding ? <MealForm meal={{}} passedStateToggle={passedStateToggle}/> : meals.map((meal, index) => (
+      {adding ? <MealForm meal={{}} /> : meals.map((meal, index) => (
         <div key={meal._id}>
           <MealCard meal={meal} onClick={() => handleMealSelect(meal)}/>
         </div>

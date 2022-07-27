@@ -41,10 +41,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={ <Home handleMealSelect={handleMealSelect} /> } />
           <Route path="/about" element={ <About /> } />
-          <Route path="/wines/:wineId" element={ <WineDetails wine={wineSelect}/> } />
+          <Route path="/wines/:wineId" element={ <WineDetails wine={wineSelect} /> } />
           <Route path="/wines" element={ <WineSearch handleWineSelect={handleWineSelect} /> } />
-          <Route path="/meals/:mealId" element={ <MealDetails /> } />
-          <Route path="/meals" element={ <MealSearch /> } />
+          <Route path="/meals/:mealId" element={ <MealDetails meal={mealSelect} /> } />
+          <Route path="/meals" element={ <MealSearch handleMealSelect={handleMealSelect}/> } />
         </Routes>
       </main>
     </div>

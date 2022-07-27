@@ -57,11 +57,6 @@ const WineForm = ({wine, passedStateToggle}) => {
     e.preventDefault()
     formToDatabase(formBody)
   }
-  if (Object.keys(initialFormState).length === 0) {
-    console.log('is true')
-  } else {
-    console.log('is false')
-  }
 
   const formToDatabase = async (formBody) => {
     if (Object.keys(initialFormState).length === 0) {

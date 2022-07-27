@@ -42,16 +42,17 @@ const MealDetails = ({ meal }) => {
   // Render (return)
   return (
     <div className="mealDetails">
-      <h1>Howdy!</h1>
-      <h3>{meal.name}</h3>
+      <h1>{meal.name}</h1>
+      <div className="img-content">
+        {meal.image ? <img scr={meal.image} alt={meal.name} /> : null}
+      </div>
+      <h3>Details</h3>
       <p>{meal.description}</p>
+      <p>Category: {meal.category}</p>
+      <p>Suggested Wines:</p>
       <ul className="infoList">
-        <li>Category: {meal.category}</li>
-        <li>Varietal: {meal.varietal}</li>
-        <li>Nation of Origin: {meal.country}</li>
-        <li>Region: {meal.region}</li>
-        <li>Sweetness: {meal.sweetness}</li>
-        <li>Price Range: {meal.price_range}</li>
+        <li>38</li>
+        <li>34</li>
       </ul>
       <button className="editBtn" onClick={editClick}>Edit</button>
       <button className="deleteBtn" onClick={handleDelete}>Delete</button>

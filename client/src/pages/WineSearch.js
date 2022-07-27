@@ -2,19 +2,21 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import WineCard from '../components/wineCard'
 import WineForm from '../components/WineForm'
+import WineFilterBar from '../components/WineFilterBar'
 
 const WineSearch = ({handleWineSelect}) => {
   //State
   const [wines, setWines] = useState([])
   const [adding, toggleAdding] = useState(false)
+  const [searchFilters, setSearchFilters] = useState({})
   //useEffects
   useEffect(() => {
     const getWines = async () => {
-      const res = await axios.get('http://localhost:3001/wines/winelist')
+      const res = await axios.get('http://localhost:3001/wines/winelist', {params: searchFilters})
       setWines(res.data.wines)
     }
     getWines()
-  },[adding])
+  },[adding, searchFilters])
   //Functions
   const addClick = (e) => {
     switch(e.target.innerHTML) {
@@ -31,6 +33,7 @@ const WineSearch = ({handleWineSelect}) => {
     }
   }
   
+  // Not doing anything, but here until I can figure it out...
   const passedStateToggle = (bool) => {
     toggleAdding(bool)
   }
@@ -41,7 +44,7 @@ const WineSearch = ({handleWineSelect}) => {
     <div className="wineSearchPage">
       <button id="newWineBtn" onClick={addClick}>Add a Wine</button>
       <div id="searchOptions">
-        <button>Search By:</button>
+        <WineFilterBar searchFilters={searchFilters} setSearchFilters={setSearchFilters}/>
       </div>
       {adding ? <WineForm wine={{}} passedStateToggle={passedStateToggle}/> : wines.map((wine, index) => (
         <div key={wine._id}>

@@ -24,3 +24,8 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+.filterBar {
+  display: flex;
+  flex-direction: row;
+}

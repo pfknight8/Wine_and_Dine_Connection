@@ -3,9 +3,18 @@
   color: beige;
 }
 
+a {
+  padding: 0 10px;
+  color: maroon;
+}
+a:hover {
+  font-style: italic;
+}
+
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: grey;
   color: maroon;
   height: 4em;

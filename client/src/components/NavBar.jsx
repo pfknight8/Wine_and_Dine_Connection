@@ -4,7 +4,7 @@ const NavBar = () => {
   //The navigation bar is created here.
   return (
     <header>
-      <nav>
+      <nav id="navBarLinks">
         <Link to='/' >Home</Link>
         <Link to='/about'>About</Link>
       </nav>

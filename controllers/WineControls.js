@@ -11,9 +11,10 @@ const placeWine = async (req, res) => {
   }
 }
 
-const getAllWines = async (req, res) => {
-  try {
-    let wines = await Wine.find({})
+const getFilteredWines = async (req, res) => {
+  try{
+    let wineQuery = await req.query
+    let wines = await Wine.find(wineQuery)
     return res.status(200).json({ wines })
   } catch (error) {
     return res.status(500).send(error.message)
@@ -57,7 +58,7 @@ const deleteWine = async (req, res) => {
 
 module.exports = {
   placeWine,
-  getAllWines,
+  getFilteredWines,
   getWine,
   deleteWine,
   updateWine

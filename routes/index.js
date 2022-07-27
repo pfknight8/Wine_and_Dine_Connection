@@ -5,7 +5,7 @@ const router = Router()
 // Routes for the wines page
 router.post('/wines', WineController.placeWine)
 
-router.get('/wines/winelist', WineController.getAllWines)
+router.get('/wines/winelist', WineController.getFilteredWines)
 
 router.get('/wines/:id', WineController.getWine)
 

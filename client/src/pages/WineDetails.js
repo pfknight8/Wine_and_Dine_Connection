@@ -24,7 +24,7 @@ const WineDetails = ({ wine }) => {
         toggleEditing(false)
         break
       default:
-        alert("Something went aggregiously wrong!")
+        alert("Something went egregiously wrong!")
     }
   }
   // handleDelete
@@ -37,7 +37,7 @@ const WineDetails = ({ wine }) => {
     try {
       // const { id } = wine.params
       await axios.delete(`http://localhost:3001/wines/${wine._id}`)
-      navigate('/')
+      navigate('/wines')
     } catch (error) {
       alert("Unable to delete item!")
     }

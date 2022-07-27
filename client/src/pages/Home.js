@@ -27,10 +27,6 @@ const Home = (props) => {
         <button id="searchWine" onClick={handleNavClick}>Browse Wines</button>
         <button id="searchMeal">Browse Meals</button>
       </div>
-      <div id="formFills">
-        <button id="newWineBtn">Add Wine to List</button>
-        <button id="newMealBtn">Add a Meal</button>
-      </div>
     </div>
   )
   //Will display the landing page by default, then navigate to components from there.

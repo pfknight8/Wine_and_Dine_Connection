@@ -14,9 +14,14 @@ const WineSearch = ({handleWineSelect}) => {
     getWines()
   },[])
   //Functions
+  // // Write the functions that adjust the search results based on selected keys
   //Render (return)
   return (
     <div className="wineSearchPage">
+      <button id="newWineBtn">Add Wine to List</button>
+      <div id="searchOptions">
+        <button>Search By:</button>
+      </div>
       {wines?.map((wine, index) => (
         <div key={wine._id}>
           <WineCard wine={wine} onClick={() => handleWineSelect(wine)}/>

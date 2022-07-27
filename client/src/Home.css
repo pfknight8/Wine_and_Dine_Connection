@@ -1,0 +1,10 @@
+.homePage {
+  /* background-color: aliceblue; */
+  text-align: center;
+}
+
+#searchWine, #searchMeal {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 4px;
+}

@@ -1,0 +1,11 @@
+body {
+  background-color: #404040;
+}
+
+a {
+  padding: 0 10px;
+  color: maroon;
+}
+a:hover {
+  font-style: italic;
+}

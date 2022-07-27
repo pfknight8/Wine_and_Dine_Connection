@@ -62,8 +62,8 @@ const MealForm = ({meal}) => {
   }
   //
   return (
-    <div className="mealForm">
-      <form onSubmit={handleSubmit}>
+    <div id="mealForm">
+      <form className="infoCard" onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
         <input className="formField" id="name" onChange={handleFormChange} defaultValue={formBody.name}></input>
         <select className="formSelect" id="category" onChange={handleDropDown} defaultValue={formBody.category} >

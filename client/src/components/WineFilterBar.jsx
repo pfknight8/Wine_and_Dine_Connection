@@ -51,7 +51,7 @@ console.log(searchFilters.sweetness)
         <input className="filterField" id="varietal" onChange={handleFormChange}></input>
         <label htmlFor="category">Category: </label>
         <select className="filterSelect" id="category" onChange={handleDropDown}>
-          <option value={null} aria-label="unselected">Please Select</option>
+          <option value={null} aria-label="unselected">Select</option>
           <option value="Red">Red</option>
           <option value="White">White</option>
           <option value="Blush/Rose">Blush/Rose</option>
@@ -64,7 +64,7 @@ console.log(searchFilters.sweetness)
         <input className="filterField" id="region" onChange={handleFormChange}></input>
         <label htmlFor="sweetness">Sweetness: </label>
         <select className="filterSelect" id="sweetness" onChange={handleDropDown} defaultValue={1}>
-          <option value={1} aria-label="unselected">Please Select</option>
+          <option value={1} aria-label="unselected">Select</option>
           <option value="Dry">Dry</option>
           <option value="Off-Dry">Off-Dry</option>
           <option value="Medium">Medium</option>
@@ -73,7 +73,7 @@ console.log(searchFilters.sweetness)
         </select>
         <label htmlFor="priceRange">Price Range: </label>
         <select className="filterSelect" id="priceRange" onChange={handleDropDown}>
-          <option value={null} aria-label="unselected">Please Select</option>
+          <option value={null} aria-label="unselected">Select</option>
           <option value="cheap" aria-label="cheap">"$"</option>
           <option value="affordable" aria-label="affordable">"$$"</option>
           <option value="expensive" aria-label="expensive">"$$$"</option>

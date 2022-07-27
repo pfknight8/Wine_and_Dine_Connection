@@ -79,11 +79,13 @@ const WineForm = ({wine, passedStateToggle}) => {
   }
 
   return (
-    <div className="wineForm">
+    <div id="wineForm">
       <p>Instruct them.</p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name: </label>
-        <input className="formField" id="name" onChange={handleFormChange} defaultValue={formBody.name}></input>
+      <form className="infoCard" onSubmit={handleSubmit}>
+        <div className="formDiv">
+          <label htmlFor="name">Name: </label>
+          <input className="formField" id="name" onChange={handleFormChange} defaultValue={formBody.name}></input>
+        </div>
         <label htmlFor="varietal">Varietal: </label>
         <input className="formField" id="varietal" onChange={handleFormChange} defaultValue={formBody.varietal}></input>
         <label htmlFor="category">Category: </label>

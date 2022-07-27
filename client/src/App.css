@@ -1,14 +1,5 @@
 .App {
-  background-color: #404040;
   color: beige;
-}
-
-a {
-  padding: 0 10px;
-  color: maroon;
-}
-a:hover {
-  font-style: italic;
 }
 
 header {
@@ -19,13 +10,59 @@ header {
   color: maroon;
   height: 4em;
 }
-
-form {
+#wineForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: inline; 
+  margin-right: 10px;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 5px;
+  width: 60vw;
+}
+
+.formDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.formField {
+  padding: 4px;
+  width: 40%;
+}
+
+.formSelect {
+  padding: 2px;
+  width: 25%;
+  text-align: center;
 }
 
 .filterBar {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.filterField {
+  margin: 5px 5px;
+  padding: 2px;
+  width: 1.25in;
+}
+
+.filterSelect {
+  margin: 5px 5px;
+  padding: 2px;
+  width: 1in;
 }

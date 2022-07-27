@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import WineCard from '../components/wineCard'
 import WineSearch from './WineSearch'
+import '../Home.css'
 
 const Home = (props) => {
   //State

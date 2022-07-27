@@ -3,6 +3,8 @@ const { WineController, MealController } = require('../controllers')
 const router = Router()
 
 // Routes for the wines page
+router.post('/wines', WineController.placeWine)
+
 router.get('/wines/winelist', WineController.getAllWines)
 
 router.get('/wines/:id', WineController.getWine)
@@ -11,15 +13,15 @@ router.put('/wines/:id', WineController.updateWine)
 
 router.delete('/wines/:id', WineController.deleteWine)
 
-router.post('/wines', WineController.placeWine)
-
 // Routes for the meals page
-// router.get()
+router.post('/meals', MealController.placeMeal)
 
-// router.post()
+router.get('/meals/mealCards', MealController.getAllMeals)
 
-// router.put()
+router.get('meals/:id', MealController.getMeal)
 
-// router.delete()
+router.put('/meals/:id', MealController.updateMeal)
+
+router.delete('meals/:id', MealController.deleteMeal)
 
 module.exports = router

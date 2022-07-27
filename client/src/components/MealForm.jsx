@@ -53,11 +53,12 @@ const MealForm = () => {
   //
   return (
     <div className="mealForm">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
         <input className="formField" id="name" onChange={handleFormChange} defaultValue={formBody.name}></input>
         <label htmlFor="description">Add a brief description: </label>
         <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
+        <button type="submit" >Submit</button>
       </form>
     </div>
   )

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import WineSearch from "./pages/WineSearch";
 import WineDetails from "./pages/WineDetails";
 import MealDetails from "./pages/MealDetails";
 import NavBar from "./components/NavBar";
@@ -21,7 +22,7 @@ const App = () => {
     // will do a "set" function
     setWineSelect(wine)
     // will navigate
-    navigate(`/wine/${wine._id}`)
+    navigate(`/wines/${wine._id}`)
   }
   const handleMealSelect = (wine) => {
     // will do a "set" function
@@ -35,10 +36,11 @@ const App = () => {
       <main>
         <p>This is where the pages will render.</p>
         <Routes>
-          <Route path="/" element={ <Home handleWineSelect={handleWineSelect} handleMealSelect={handleMealSelect} /> } />
+          <Route path="/" element={ <Home handleMealSelect={handleMealSelect} /> } />
           <Route path="/about" element={ <About /> } />
-          <Route path="/wine/:wineId" element={<WineDetails wine={wineSelect}/>} />
-          <Route path="/meal/:mealId" element={<MealDetails />} />
+          <Route path="/wines/:wineId" element={<WineDetails wine={wineSelect}/>} />
+          <Route path="/wines" element={ <WineSearch handleWineSelect={handleWineSelect} /> } />
+          <Route path="/meals/:mealId" element={<MealDetails />} />
         </Routes>
       </main>
     </div>

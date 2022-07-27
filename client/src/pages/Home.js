@@ -1,27 +1,36 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import WineCard from '../components/wineCard'
+import WineSearch from './WineSearch'
 
-const Home = ({ handleWineSelect, handleMealSelect }) => {
+const Home = (props) => {
   //State
-  const [wines, setWines] = useState([])
+  let navigate = useNavigate()
   //useEffects
-  useEffect(() => {
-    const getWines = async () => {
-      const res = await axios.get('http://localhost:3001/wines/winelist')
-      setWines(res.data.wines)
-    }
-    getWines()
-  },[])
   //Functions
+  const handleNavClick = (e) => {
+    e.preventDefault()
+    switch(e.target.id) {
+      case "searchWine":
+        navigate('/wines')
+        break
+      case "searchMeal":
+        // navigate('/meals')
+        break
+    }
+  }
   //Render (return)
   return (
     <div className="homePage">
-      {wines?.map((wine, index) => (
-        <div key={wine._id}>
-          <WineCard wine={wine} onClick={() => handleWineSelect(wine)}/>
-        </div>
-      ))}
+      <div id="searchBtns">
+        <button id="searchWine" onClick={handleNavClick}>Browse Wines</button>
+        <button id="searchMeal">Browse Meals</button>
+      </div>
+      <div id="formFills">
+        <button id="newWineBtn">Add Wine to List</button>
+        <button id="newMealBtn">Add a Meal</button>
+      </div>
     </div>
   )
   //Will display the landing page by default, then navigate to components from there.

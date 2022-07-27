@@ -39,7 +39,7 @@ const WineForm = ({wine}) => {
     //Will perform database function, reset state, and navigate back (or toggle editing)
     try {
       await axios.put(`http://localhost:3001/wines/${formBody._id}`, formBody)
-      navigate('/')
+      navigate('/wines')
     } catch (error) {
       console.log('Error!')
     }
@@ -68,10 +68,10 @@ const WineForm = ({wine}) => {
         <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
         <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.sweetness} >
           <option value="Dry">Dry</option>
-          <option value="Off-Dry">"$$"</option>
-          <option value="Medium">"$$$"</option>
-          <option value="Sweet">"$K"</option>
-          <option value="Very-Sweet"></option>
+          <option value="Off-Dry">Off-Dry</option>
+          <option value="Medium">Medium</option>
+          <option value="Sweet">Sweet</option>
+          <option value="Very-Sweet">Very Sweet</option>
         </select>
         <select className="formSelect" id="priceRange" onChange={handleDropDown} defaultValue={formBody.price_range} >
           <option value="cheap" aria-label="cheap">"$"</option>

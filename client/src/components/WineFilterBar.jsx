@@ -41,7 +41,7 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
     e.preventDefault()
     setSearchFilters({})
   }
-
+console.log(searchFilters.sweetness)
   return (
     <div className="filters">
       <form className="filterBar" onReset={handleReset}>
@@ -64,7 +64,7 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
         <input className="filterField" id="region" onChange={handleFormChange}></input>
         <label htmlFor="sweetness">Sweetness: </label>
         <select className="filterSelect" id="sweetness" onChange={handleDropDown} defaultValue={searchFilters.sweetness}>
-          <option value={null} aria-label="unselected">Please Select</option>
+          <option value={undefined} aria-label="unselected">Please Select</option>
           <option value="Dry">Dry</option>
           <option value="Off-Dry">Off-Dry</option>
           <option value="Medium">Medium</option>

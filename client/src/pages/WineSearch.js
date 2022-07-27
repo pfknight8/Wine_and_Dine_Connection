@@ -16,7 +16,7 @@ const WineSearch = ({handleWineSelect}) => {
       setWines(res.data.wines)
     }
     getWines()
-  },[adding, searchFilters])
+  },[searchFilters])
   //Functions
   const addClick = (e) => {
     switch(e.target.innerHTML) {

@@ -25,8 +25,20 @@ const WineForm = ({wine}) => {
     }
   }
   const handleDropDown = (e) => {
-    let priceValue = e.target.value
-    setFormBody({...formBody, price_range: priceValue})
+    let dropItem = e.target.value
+    switch(e.target.id) {
+      case "category":
+        setFormBody({...formBody, category: dropItem})
+        break
+      case "sweetness":
+        setFormBody({...formBody, sweetness: dropItem})
+        break
+      case "priceRange":
+        setFormBody({...formBody, price_range: dropItem})
+        break
+      default:
+        alert("Something went wrong with dropdown menu!")
+    }
   }
 
   // handleSubmit
@@ -36,7 +48,6 @@ const WineForm = ({wine}) => {
   }
   console.log(formBody._id)
   const formToDatabase = async (formBody) => {
-    //Will perform database function, reset state, and navigate back (or toggle editing)
     try {
       await axios.put(`http://localhost:3001/wines/${formBody._id}`, formBody)
       navigate('/wines')
@@ -44,7 +55,7 @@ const WineForm = ({wine}) => {
       console.log('Error!')
     }
   }
-  //Place on submit a level up, as this form will be handed two different one for POST and PUT
+
   return (
     <div className="wineForm">
       <p>Instruct them.</p>
@@ -65,7 +76,9 @@ const WineForm = ({wine}) => {
         <input className="formField" id="country" defaultValue={formBody.country}></input>
         <label htmlFor="region">Region: </label>
         <input className="formField" id="region" defaultValue={formBody.region}></input>
+        <label htmlFor="description">Add a brief description: </label>
         <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
+        <label htmlFor="sweetness">Sweetness: </label>
         <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.sweetness} >
           <option value="Dry">Dry</option>
           <option value="Off-Dry">Off-Dry</option>
@@ -73,6 +86,7 @@ const WineForm = ({wine}) => {
           <option value="Sweet">Sweet</option>
           <option value="Very-Sweet">Very Sweet</option>
         </select>
+        <label htmlFor="priceRange">Price Range: </label>
         <select className="formSelect" id="priceRange" onChange={handleDropDown} defaultValue={formBody.price_range} >
           <option value="cheap" aria-label="cheap">"$"</option>
           <option value="affordable" aria-label="affordable">"$$"</option>

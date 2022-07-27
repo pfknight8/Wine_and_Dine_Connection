@@ -10,3 +10,8 @@ header {
   color: maroon;
   height: 4em;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}

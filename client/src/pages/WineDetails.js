@@ -43,6 +43,10 @@ const WineDetails = ({ wine }) => {
     }
   }
 
+  const passedStateToggle = (bool) => {
+    toggleEditing(bool)
+  }
+
   // Render (return)
   return (
     <div className="wineDetails">
@@ -60,7 +64,8 @@ const WineDetails = ({ wine }) => {
       <button className="editBtn" onClick={editClick}>Edit</button>
       <button className="deleteBtn" onClick={handleDelete}>Delete</button>
       <div className="editFormHolder">
-        {editing ? <WineForm wine={wine} /> : null}
+        {editing ? <WineForm wine={wine} passedStateToggle=
+        {passedStateToggle}/> : null}
       </div>
     </div>
   )

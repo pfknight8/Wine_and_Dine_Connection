@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios";
 
-const WineForm = ({wine}) => {
+const WineForm = ({wine, passedStateToggle}) => {
   // Try to write generic first to see if can be used for both edit and update.
-  let initialFormState;
-  {wine ? initialFormState = wine : initialFormState = { name: "", description: "", varietal: "", category: "", country: "", region: "", sweetness: "", price_range: "", image: "" }}
+  let initialFormState = wine
+  // {wine ? initialFormState = wine : initialFormState = { name: "", description: "", varietal: "", category: "", country: "", region: "", sweetness: "", price_range: "", image: "" }}
   const [formBody, setFormBody] = useState(initialFormState)
   
   let navigate = useNavigate()
@@ -17,13 +17,24 @@ const WineForm = ({wine}) => {
     switch(e.target.id) {
       case "name":
         setFormBody({...formBody, name: formItem})
+        break
       case "description":
         setFormBody({...formBody, description: formItem})
+        break
+      case "varietal":
+        setFormBody({...formBody, varietal: formItem})
+        break
+      case "country":
+        setFormBody({...formBody, country: formItem})
+        break
+      case "region":
+        setFormBody({...formBody, region: formItem})
         break
       default:
         alert("Something is wrong!")
     }
   }
+
   const handleDropDown = (e) => {
     let dropItem = e.target.value
     switch(e.target.id) {
@@ -46,13 +57,28 @@ const WineForm = ({wine}) => {
     e.preventDefault()
     formToDatabase(formBody)
   }
-  console.log(formBody._id)
+  if (Object.keys(initialFormState).length === 0) {
+    console.log('is true')
+  } else {
+    console.log('is false')
+  }
+
   const formToDatabase = async (formBody) => {
-    try {
-      await axios.put(`http://localhost:3001/wines/${formBody._id}`, formBody)
-      navigate('/wines')
-    } catch (error) {
-      console.log('Error!')
+    if (Object.keys(initialFormState).length === 0) {
+      try {
+        await axios.post(`http://localhost:3001/wines`, formBody)
+        setFormBody({})
+        passedStateToggle(false)
+      } catch (error) {
+        console.log('Error!')
+      }
+    } else {
+      try {
+        await axios.put(`http://localhost:3001/wines/${formBody._id}`, formBody)
+        navigate('/wines')
+      } catch (error) {
+        console.log('Error!')
+      }
     }
   }
 
@@ -61,11 +87,12 @@ const WineForm = ({wine}) => {
       <p>Instruct them.</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
-        <input className="formField" id="name" defaultValue={formBody.name}></input>
+        <input className="formField" id="name" onChange={handleFormChange} defaultValue={formBody.name}></input>
         <label htmlFor="varietal">Varietal: </label>
-        <input className="formField" id="varietal" defaultValue={formBody.varietal}></input>
+        <input className="formField" id="varietal" onChange={handleFormChange} defaultValue={formBody.varietal}></input>
         <label htmlFor="category">Category: </label>
         <select className="formSelect" id="category" onChange={handleDropDown} defaultValue={formBody.category} >
+          <option value={null} aria-label="unselected">Please Select</option>
           <option value="Red">Red</option>
           <option value="White">White</option>
           <option value="Blush/Rose">Blush/Rose</option>
@@ -73,13 +100,14 @@ const WineForm = ({wine}) => {
           <option value="Dessert">Dessert</option>
         </select>
         <label htmlFor="country">Country: </label>
-        <input className="formField" id="country" defaultValue={formBody.country}></input>
+        <input className="formField" id="country" onChange={handleFormChange} defaultValue={formBody.country}></input>
         <label htmlFor="region">Region: </label>
-        <input className="formField" id="region" defaultValue={formBody.region}></input>
+        <input className="formField" id="region" onChange={handleFormChange} defaultValue={formBody.region}></input>
         <label htmlFor="description">Add a brief description: </label>
         <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
         <label htmlFor="sweetness">Sweetness: </label>
         <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.sweetness} >
+          <option value={null} aria-label="unselected">Please Select</option>
           <option value="Dry">Dry</option>
           <option value="Off-Dry">Off-Dry</option>
           <option value="Medium">Medium</option>
@@ -88,6 +116,7 @@ const WineForm = ({wine}) => {
         </select>
         <label htmlFor="priceRange">Price Range: </label>
         <select className="formSelect" id="priceRange" onChange={handleDropDown} defaultValue={formBody.price_range} >
+          <option value={null} aria-label="unselected">Please Select</option>
           <option value="cheap" aria-label="cheap">"$"</option>
           <option value="affordable" aria-label="affordable">"$$"</option>
           <option value="expensive" aria-label="expensive">"$$$"</option>

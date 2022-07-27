@@ -46,7 +46,7 @@ console.log(searchFilters.sweetness)
     <div className="filters">
       <form className="filterBar" onReset={handleReset}>
         <label htmlFor="name">Name: </label>
-        <input className="filterField" id="name" onChange={handleFormChange}></input>
+        <input className="filterField" id="name" onChange={handleFormChange} defaultValue="" ></input>
         <label htmlFor="varietal">Varietal: </label>
         <input className="filterField" id="varietal" onChange={handleFormChange}></input>
         <label htmlFor="category">Category: </label>
@@ -63,8 +63,8 @@ console.log(searchFilters.sweetness)
         <label htmlFor="region">Region: </label>
         <input className="filterField" id="region" onChange={handleFormChange}></input>
         <label htmlFor="sweetness">Sweetness: </label>
-        <select className="filterSelect" id="sweetness" onChange={handleDropDown} defaultValue={searchFilters.sweetness}>
-          <option value={undefined} aria-label="unselected">Please Select</option>
+        <select className="filterSelect" id="sweetness" onChange={handleDropDown} defaultValue={1}>
+          <option value={1} aria-label="unselected">Please Select</option>
           <option value="Dry">Dry</option>
           <option value="Off-Dry">Off-Dry</option>
           <option value="Medium">Medium</option>

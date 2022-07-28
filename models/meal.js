@@ -7,7 +7,7 @@ const MealSchema = new Schema(
     category: { type: String, required: true },
     image: { type: String, required: false },
     wine_pairs: {
-      sweetness: { type: String, required: false },
+      sweetness: [{ type: String, required: false }],
       varietals: [{ type: String, required: false }],
     },
   },

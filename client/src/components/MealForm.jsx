@@ -86,7 +86,7 @@ const MealForm = ({meal}) => {
         <div className="formDiv">
           <label htmlFor="category">Category: </label>
           <select className="formSelect" id="category" onChange={handleDropDown} defaultValue={formBody.category} >
-            <option value={null} aria-label="unselected">Please Select</option>
+            <option value={null} aria-label="unselected">Select</option>
             <option value="Appetizer">Appetizer</option>
             <option value="Palate Cleanser">Palate Cleanser</option>
             <option value="Main Course">Main Course</option>
@@ -102,7 +102,7 @@ const MealForm = ({meal}) => {
           <label htmlFor="wine_pairs">Wine Pairing: </label>
           <label htmlFor="sweetness">Sweetness: </label>
           <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.wine_pairs.sweetness} >
-            <option value={null} aria-label="unselected">Please Select</option>
+            <option value={null} aria-label="unselected"></option>
             <option value="Dry">Dry</option>
             <option value="Off-Dry">Off-Dry</option>
             <option value="Medium">Medium</option>

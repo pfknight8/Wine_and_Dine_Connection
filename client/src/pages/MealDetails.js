@@ -14,7 +14,8 @@ const MealDetails = ({ meal, handleWineSelect }) => {
   // useEffects
   useEffect(() => {
     let varietalList = meal.wine_pairs.varietals
-    let searchParams = {sweetness: meal.wine_pairs.sweetness, varietal: varietalList}
+    let sweetList = meal.wine_pairs.sweetness
+    let searchParams = {sweetness: sweetList, varietal: varietalList}
     console.log(searchParams)
     setSearchFilters(searchParams)
     setWineSuggestions([])

@@ -30,6 +30,9 @@ const WineForm = ({ wine }) => {
       case "region":
         setFormBody({...formBody, region: formItem})
         break
+      case "image":
+        setFormBody({...formBody, image: formItem})
+        break
       default:
         alert("Something is wrong!")
     }
@@ -132,6 +135,10 @@ const WineForm = ({ wine }) => {
             <option value="luxury" aria-label="luxury">"$$$"</option>
             <option value="icon" aria-label="icon">"$$$$"</option>
           </select>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="image">Image URL: </label>
+          <textarea className="formField" id="image" onChange={handleFormChange} defaultValue={formBody.image}></textarea>
         </div>
         <button type="submit" >Submit</button>
       </form>

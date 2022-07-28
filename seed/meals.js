@@ -6,13 +6,13 @@ db.on("error", console.error.bind(console, "MongoDB Connection Error:"));
 const main = async () => {
   const meals = [
     {
-      name: "A meal",
-      description: "Oh, a tasty meal!",
+      name: "Cheeseburger",
+      description: "American standard fare.",
       category: "Main Course",
       image: "",
       wine_pairs: {
-        sweetness: "Medium",
-        varietals: ["Merlot", "Cabernet Sauvignon"],
+        sweetness: ["Dry", "Medium", "Off-Dry"],
+        varietals: ["Merlot", "Cabernet Sauvignon", "Grenache", "Malbec", "Zinfandel", "Chardonney", "Brut"],
       },
     },
     {
@@ -21,8 +21,18 @@ const main = async () => {
       category: "Dessert",
       image: "",
       wine_pairs: {
-        sweetness: "",
+        sweetness: [""],
         varietals: ["Tawny Port"],
+      },
+    },
+    {
+      name: "Shrimp Cocktail",
+      description: "A simple, classic starter that is perfect for sharing.",
+      category: "Appetizer",
+      image: "https://i.imgur.com/Jt6h3.jpeg",
+      wine_pairs: {
+        sweetness: ["Off-Dry", "Medium", "Sweet"],
+        varietals: ["Pinot Gris", "Prosecco", "Riesling", "Sauvignon Blanc", "Muscadet"],
       },
     },
   ]

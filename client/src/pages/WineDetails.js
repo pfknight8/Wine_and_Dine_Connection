@@ -63,8 +63,10 @@ const WineDetails = ({ wine }) => {
         <li>Sweetness: {wine.sweetness}</li>
         <li>Price Range: {wine.price_range}</li>
       </ul>
-      <button className="editBtn" onClick={editClick}>Edit</button>
-      <button className="deleteBtn" onClick={handleDelete}>Delete</button>
+      <div className="buttonHolder">
+        <button className="editBtn" onClick={editClick}>Edit</button>
+        <button className="deleteBtn" onClick={handleDelete}>Delete</button>
+      </div>
       <div className="editFormHolder">
         {editing ? <WineForm wine={wine} passedStateToggle=
         {passedStateToggle}/> : null}

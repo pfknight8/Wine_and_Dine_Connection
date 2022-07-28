@@ -6,15 +6,45 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: grey;
-  color: maroon;
+  background-color: #F7E7CE;
+  color: #722F37;
   height: 4em;
+}
+
+button {
+  margin: 5px;
+}
+
+.editBtn, .deleteBtn {
+  padding: 2px;
+  width: 1in;
+  background-color: #722F37;
+  border-top: 2px solid #823F47;
+  border-right: 2px solid #621F27;
+  border-bottom: 2px solid #621F27;
+  border-left: 2px solid #823F47;
+  border-radius: 4px;
+  color:#F7E7CE
+}
+
+.editBtn:hover, .deleteBtn:hover {
+  border-bottom: 2px solid #823F47;
+  border-left: 2px solid #621F27;
+  border-top: 2px solid #621F27;
+  border-right: 2px solid #823F47;
+  border-radius: 4px;
+  font-style: italic;
 }
 
 #wineForm {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.buttonHolder {
+  display: flex;
+  justify-content: space-around;
 }
 
 label {

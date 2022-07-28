@@ -54,8 +54,10 @@ const MealDetails = ({ meal }) => {
         <li>38</li>
         <li>34</li>
       </ul>
-      <button className="editBtn" onClick={editClick}>Edit</button>
-      <button className="deleteBtn" onClick={handleDelete}>Delete</button>
+      <div className="buttonHolder">
+        <button className="editBtn" onClick={editClick}>Edit</button>
+        <button className="deleteBtn" onClick={handleDelete}>Delete</button>
+      </div>
       <div className="editFormHolder">
         {editing ? <MealForm meal={meal} /> : null}
       </div>

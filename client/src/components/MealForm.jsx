@@ -64,18 +64,25 @@ const MealForm = ({meal}) => {
   return (
     <div id="mealForm">
       <form className="infoCard" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name: </label>
-        <input className="formField" id="name" onChange={handleFormChange} defaultValue={formBody.name}></input>
-        <select className="formSelect" id="category" onChange={handleDropDown} defaultValue={formBody.category} >
-          <option value={null} aria-label="unselected">Please Select</option>
-          <option value="appetizer">Appetizer</option>
-          <option value="dinner">Dinner</option>
-          <option value="main_course">Main Course</option>
-          <option value="cheeses">Cheese Board</option>
-          <option value="Dessert">Dessert</option>
-        </select>
-        <label htmlFor="description">Add a brief description: </label>
-        <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
+        <div className="formDiv">
+          <label htmlFor="name">Name: </label>
+          <input className="formField" id="name" onChange={handleFormChange} defaultValue={formBody.name}></input>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="category">Category: </label>
+          <select className="formSelect" id="category" onChange={handleDropDown} defaultValue={formBody.category} >
+            <option value={null} aria-label="unselected">Please Select</option>
+            <option value="appetizer">Appetizer</option>
+            <option value="dinner">Dinner</option>
+            <option value="main_course">Main Course</option>
+            <option value="cheeses">Cheese Board</option>
+            <option value="Dessert">Dessert</option>
+          </select>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="description">Add a brief description: </label>
+          <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
+        </div>
         <button type="submit" >Submit</button>
       </form>
     </div>

@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(logger('dev'))
 app.use(cors())
 
-app.use('/', routes) //maybe better to use /wineDB ?
+app.use('/wineDB', routes)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error!'))
 

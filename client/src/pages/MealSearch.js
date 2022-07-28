@@ -13,14 +13,13 @@ const MealSearch = ({handleMealSelect}) => {
   //useEffects
   useEffect(() => {
     const getMeals = async () => {
-      const res = await axios.get('http://localhost:3001/meals/mealCards', {params: searchFilters})
+      const res = await axios.get('http://localhost:3001/wineDB/meals/mealCards', {params: searchFilters})
       setMeals(res.data.meals)
     }
     getMeals()
   },[searchFilters])
   // Functions
   const addClick = (e) => {
-    console.log(e.target.innerHTML)
     switch(e.target.innerHTML) {
       case "Add a Meal":
         toggleAdding(true)

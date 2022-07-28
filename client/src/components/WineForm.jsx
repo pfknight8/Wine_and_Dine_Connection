@@ -64,7 +64,7 @@ const WineForm = ({ wine }) => {
   const formToDatabase = async (formBody) => {
     if (Object.keys(initialFormState).length === 0) {
       try {
-        await axios.post(`http://localhost:3001/wines`, formBody)
+        await axios.post(`http://localhost:3001/wineDB/wines`, formBody)
         setFormBody({})
         navigate('/')
       } catch (error) {
@@ -72,7 +72,7 @@ const WineForm = ({ wine }) => {
       }
     } else {
       try {
-        await axios.put(`http://localhost:3001/wines/${formBody._id}`, formBody)
+        await axios.put(`http://localhost:3001/wineDB/wines/${formBody._id}`, formBody)
         navigate('/wines')
       } catch (error) {
         console.log('Error!')

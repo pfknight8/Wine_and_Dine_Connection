@@ -13,7 +13,7 @@ const WineSearch = ({handleWineSelect}) => {
   //useEffects
   useEffect(() => {
     const getWines = async () => {
-      const res = await axios.get('http://localhost:3001/wines/winelist', {params: searchFilters})
+      const res = await axios.get('http://localhost:3001/wineDB/wines/winelist', {params: searchFilters})
       setWines(res.data.wines)
     }
     getWines()

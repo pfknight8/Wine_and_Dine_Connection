@@ -15,9 +15,9 @@ button {
   margin: 5px;
 }
 
-.editBtn, .deleteBtn, .backBtn {
+.editBtn, .deleteBtn, .backBtn, .findWines {
   padding: 2px;
-  width: 1in;
+  width: 1.25in;
   background-color: #722F37;
   border-top: 2px solid #823F47;
   border-right: 2px solid #621F27;

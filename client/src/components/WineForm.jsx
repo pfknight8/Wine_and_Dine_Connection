@@ -86,40 +86,54 @@ const WineForm = ({wine, passedStateToggle}) => {
           <label htmlFor="name">Name: </label>
           <input className="formField" id="name" onChange={handleFormChange} defaultValue={formBody.name}></input>
         </div>
-        <label htmlFor="varietal">Varietal: </label>
-        <input className="formField" id="varietal" onChange={handleFormChange} defaultValue={formBody.varietal}></input>
-        <label htmlFor="category">Category: </label>
-        <select className="formSelect" id="category" onChange={handleDropDown} defaultValue={formBody.category} >
-          <option value={null} aria-label="unselected">Please Select</option>
-          <option value="Red">Red</option>
-          <option value="White">White</option>
-          <option value="Blush/Rose">Blush/Rose</option>
-          <option value="Sparkling">Sparkling</option>
-          <option value="Dessert">Dessert</option>
-        </select>
-        <label htmlFor="country">Country: </label>
-        <input className="formField" id="country" onChange={handleFormChange} defaultValue={formBody.country}></input>
-        <label htmlFor="region">Region: </label>
-        <input className="formField" id="region" onChange={handleFormChange} defaultValue={formBody.region}></input>
-        <label htmlFor="description">Add a brief description: </label>
-        <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
-        <label htmlFor="sweetness">Sweetness: </label>
-        <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.sweetness} >
-          <option value={null} aria-label="unselected">Please Select</option>
-          <option value="Dry">Dry</option>
-          <option value="Off-Dry">Off-Dry</option>
-          <option value="Medium">Medium</option>
-          <option value="Sweet">Sweet</option>
-          <option value="Very-Sweet">Very Sweet</option>
-        </select>
-        <label htmlFor="priceRange">Price Range: </label>
-        <select className="formSelect" id="priceRange" onChange={handleDropDown} defaultValue={formBody.price_range} >
-          <option value={null} aria-label="unselected">Please Select</option>
-          <option value="cheap" aria-label="cheap">"$"</option>
-          <option value="affordable" aria-label="affordable">"$$"</option>
-          <option value="expensive" aria-label="expensive">"$$$"</option>
-          <option value="thousands" aria-label="thousands">"$K"</option>
-        </select>
+        <div className="formDiv">
+          <label htmlFor="varietal">Varietal: </label>
+          <input className="formField" id="varietal" onChange={handleFormChange} defaultValue={formBody.varietal}></input>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="category">Category: </label>
+          <select className="formSelect" id="category" onChange={handleDropDown} defaultValue={formBody.category} >
+            <option value={null} aria-label="unselected">Please Select</option>
+            <option value="Red">Red</option>
+            <option value="White">White</option>
+            <option value="Blush/Rose">Blush/Rose</option>
+            <option value="Sparkling">Sparkling</option>
+            <option value="Dessert">Dessert</option>
+          </select>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="country">Country: </label>
+          <input className="formField" id="country" onChange={handleFormChange} defaultValue={formBody.country}></input>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="region">Region: </label>
+          <input className="formField" id="region" onChange={handleFormChange} defaultValue={formBody.region}></input>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="description">Brief description: </label>
+          <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="sweetness">Sweetness: </label>
+          <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.sweetness} >
+            <option value={null} aria-label="unselected">Please Select</option>
+            <option value="Dry">Dry</option>
+            <option value="Off-Dry">Off-Dry</option>
+            <option value="Medium">Medium</option>
+            <option value="Sweet">Sweet</option>
+            <option value="Very-Sweet">Very Sweet</option>
+          </select>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="priceRange">Price Range: </label>
+          <select className="formSelect" id="priceRange" onChange={handleDropDown} defaultValue={formBody.price_range} >
+            <option value={null} aria-label="unselected">Please Select</option>
+            <option value="cheap" aria-label="cheap">"$"</option>
+            <option value="affordable" aria-label="affordable">"$$"</option>
+            <option value="expensive" aria-label="expensive">"$$$"</option>
+            <option value="thousands" aria-label="thousands">"$K"</option>
+          </select>
+        </div>
         <button type="submit" >Submit</button>
       </form>
     </div>

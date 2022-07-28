@@ -10,6 +10,7 @@ header {
   color: maroon;
   height: 4em;
 }
+
 #wineForm {
   display: flex;
   flex-direction: column;
@@ -19,6 +20,15 @@ header {
 label {
   display: inline; 
   margin-right: 10px;
+  width: 40%;
+}
+
+.wineCard {
+  border: 2px solid black;
+}
+
+.wineDetails {
+  border: 2px solid black;
 }
 
 .infoCard {
@@ -28,19 +38,23 @@ label {
   margin: 10px;
   padding: 5px;
   width: 60vw;
+  max-width: 400px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .formDiv {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 5px;
 }
 
 .formField {
   padding: 4px;
-  width: 40%;
+  width: 60%;
 }
 
 .formSelect {

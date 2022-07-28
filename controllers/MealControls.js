@@ -3,7 +3,7 @@ const { Meal } = require('../models')
 //Controllers for the meal page
 const placeMeal = async (req, res) => {
   try {
-    const meal = await new Wine(req.body)
+    const meal = await new Meal(req.body)
     await meal.save()
     return res.status(200).json({ meal })
   } catch (error) {

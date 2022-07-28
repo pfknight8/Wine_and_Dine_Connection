@@ -22,10 +22,12 @@ const MealForm = ({meal}) => {
         setFormBody({...formBody, description: formItem})
         break
       case "varietals":
-        let varietalArr = [...wineProps.varietals]
-        varietalArr = formItem.split(',')
+        let varietalArr = formItem.split(',')
         let newProps = {...wineProps, varietals: varietalArr}
         setFormBody({...formBody, wine_pairs: newProps})
+        break
+      case "image":
+        setFormBody({...formBody, image: formItem})
         break
       default:
         alert("Something is wrong!")
@@ -52,13 +54,14 @@ const MealForm = ({meal}) => {
     e.preventDefault()
     formToDatabase(formBody)
   }
-  console.log(formBody._id)
+
   const formToDatabase = async (formBody) => {
     //Will perform database function, reset state, and navigate back (or toggle editing)
-    if (Object.keys(initialFormState).length === 0) {
+    console.log(formBody)
+    if (formBody._id === undefined) {
       try {
         await axios.post(`http://localhost:3001/meals`, formBody)
-        setFormBody({})
+        setFormBody({wine_pairs:{}})
         navigate('/')
       } catch (error) {
         console.log('Error!')
@@ -110,6 +113,10 @@ const MealForm = ({meal}) => {
         <div className="formDiv">
           <label htmlFor="varietals">Varietals: </label>
           <textarea className="formField" id="varietals" onChange={handleFormChange} defaultValue={formBody.wine_pairs.varietals}></textarea>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="image">Image: </label>
+          <textarea className="formField" id="image" onChange={handleFormChange} defaultValue={formBody.image}></textarea>
         </div>
         <button type="submit" >Submit</button>
       </form>

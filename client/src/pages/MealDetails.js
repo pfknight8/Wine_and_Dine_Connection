@@ -33,7 +33,7 @@ const MealDetails = ({ meal }) => {
   
   const deleteWine = async (meal) => {
     try {
-      await axios.delete(`http://localhost:3001/wines/${meal._id}`)
+      await axios.delete(`http://localhost:3001/meals/${meal._id}`)
       navigate('/meals')
     } catch (error) {
       alert("Unable to delete item!")
@@ -51,13 +51,12 @@ const MealDetails = ({ meal }) => {
       <p>Category: {meal.category}</p>
       <h3>Suggested Wines Qualities:</h3>
       <p>Sweetness level: {meal.wine_pairs.sweetness}</p>
-      <p>Varietals: <br />
+      <p>Varietals:</p>
       <ul className="infoList">
         {meal.wine_pairs.varietals.map((varietal) => (
           <li>{varietal}</li>
         ))}
       </ul>
-      </p>
       <div className="buttonHolder">
         <button className="editBtn" onClick={editClick}>Edit</button>
         <button className="deleteBtn" onClick={handleDelete}>Delete</button>

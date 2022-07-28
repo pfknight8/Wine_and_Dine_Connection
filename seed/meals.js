@@ -10,14 +10,20 @@ const main = async () => {
       description: "Oh, a tasty meal!",
       category: "Main Course",
       image: "",
-      wine_pairs: ""
+      wine_pairs: {
+        sweetness: "Medium",
+        varietals: ["Merlot", "Cabernet Sauvignon"],
+      },
     },
     {
       name: "A dessert",
       description: "A tasty after meal treat!",
       category: "Dessert",
       image: "",
-      wine_pairs: "",
+      wine_pairs: {
+        sweetness: "",
+        varietals: ["Tawny Port"],
+      },
     },
   ]
   await Meal.insertMany(meals);

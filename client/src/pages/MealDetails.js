@@ -46,14 +46,18 @@ const MealDetails = ({ meal }) => {
       <div className="img-content">
         {meal.image ? <img scr={meal.image} alt={meal.name} /> : null}
       </div>
-      <h3>Details</h3>
+      <h2>Details</h2>
       <p>{meal.description}</p>
       <p>Category: {meal.category}</p>
-      <p>Suggested Wines:</p>
+      <h3>Suggested Wines Qualities:</h3>
+      <p>Sweetness level: {meal.wine_pairs.sweetness}</p>
+      <p>Varietals: <br />
       <ul className="infoList">
-        <li>38</li>
-        <li>34</li>
+        {meal.wine_pairs.varietals.map((varietal) => (
+          <li>{varietal}</li>
+        ))}
       </ul>
+      </p>
       <div className="buttonHolder">
         <button className="editBtn" onClick={editClick}>Edit</button>
         <button className="deleteBtn" onClick={handleDelete}>Delete</button>

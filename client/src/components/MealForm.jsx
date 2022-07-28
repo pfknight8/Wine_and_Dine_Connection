@@ -13,6 +13,7 @@ const MealForm = ({meal}) => {
 
   const handleFormChange = (e) => {
     let formItem = e.target.value
+    let wineProps = formBody.wine_pairs
     switch(e.target.id) {
       case "name":
         setFormBody({...formBody, name: formItem})
@@ -20,15 +21,26 @@ const MealForm = ({meal}) => {
       case "description":
         setFormBody({...formBody, description: formItem})
         break
+      case "varietals":
+        let varietalArr = [...wineProps.varietals]
+        varietalArr = formItem.split(',')
+        let newProps = {...wineProps, varietals: varietalArr}
+        setFormBody({...formBody, wine_pairs: newProps})
+        break
       default:
         alert("Something is wrong!")
     }
   }
   const handleDropDown = (e) => {
     let dropItem = e.target.value
+    let wineProps = formBody.wine_pairs
     switch(e.target.id) {
       case "category":
         setFormBody({...formBody, category: dropItem})
+        break
+      case "sweetness":
+        let newProps = {...wineProps, sweetness: dropItem}
+        setFormBody({...formBody, wine_pairs: [newProps]})
         break
       default:
         alert("Something is wrong with dropdown menu!")
@@ -82,6 +94,22 @@ const MealForm = ({meal}) => {
         <div className="formDiv">
           <label htmlFor="description">Add a brief description: </label>
           <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="wine_pairs">Wine Pairing: </label>
+          <label htmlFor="sweetness">Sweetness: </label>
+          <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.sweetness} >
+            <option value={null} aria-label="unselected">Please Select</option>
+            <option value="Dry">Dry</option>
+            <option value="Off-Dry">Off-Dry</option>
+            <option value="Medium">Medium</option>
+            <option value="Sweet">Sweet</option>
+            <option value="Very-Sweet">Very Sweet</option>
+          </select>
+        </div>
+        <div className="formDiv">
+          <label htmlFor="varietals">Varietals: </label>
+          <textarea className="formField" id="varietals" onChange={handleFormChange} defaultValue={formBody.wine_pairs.varietals}></textarea>
         </div>
         <button type="submit" >Submit</button>
       </form>

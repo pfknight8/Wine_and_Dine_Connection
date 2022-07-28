@@ -22,6 +22,6 @@ router.get('meals/:id', MealController.getMeal)
 
 router.put('/meals/:id', MealController.updateMeal)
 
-router.delete('meals/:id', MealController.deleteMeal)
+router.delete('/meals/:id', MealController.deleteMeal)
 
 module.exports = router

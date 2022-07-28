@@ -30,6 +30,11 @@ const MealDetails = ({ meal }) => {
     e.preventDefault
     deleteWine(meal)
   }
+
+  const goBack = (e) => {
+    e.preventDefault()
+    navigate('/meals')
+  }
   
   const deleteWine = async (meal) => {
     try {
@@ -60,6 +65,7 @@ const MealDetails = ({ meal }) => {
       <div className="buttonHolder">
         <button className="editBtn" onClick={editClick}>Edit</button>
         <button className="deleteBtn" onClick={handleDelete}>Delete</button>
+        <button className="backBtn" onClick={goBack}>Back</button>
       </div>
       <div className="editFormHolder">
         {editing ? <MealForm meal={meal} /> : null}

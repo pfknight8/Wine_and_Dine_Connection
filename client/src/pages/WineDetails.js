@@ -31,6 +31,11 @@ const WineDetails = ({ wine }) => {
     e.preventDefault
     deleteWine(wine)
   }
+
+  const goBack = (e) => {
+    e.preventDefault()
+    navigate('/wines')
+  }
   
   const deleteWine = async (wine) => {
     try {
@@ -66,6 +71,7 @@ const WineDetails = ({ wine }) => {
       <div className="buttonHolder">
         <button className="editBtn" onClick={editClick}>Edit</button>
         <button className="deleteBtn" onClick={handleDelete}>Delete</button>
+        <button className="backBtn" onClick={goBack}>Back</button>
       </div>
       <div className="editFormHolder">
         {editing ? <WineForm wine={wine} passedStateToggle=

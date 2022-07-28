@@ -15,7 +15,7 @@ button {
   margin: 5px;
 }
 
-.editBtn, .deleteBtn {
+.editBtn, .deleteBtn, .backBtn {
   padding: 2px;
   width: 1in;
   background-color: #722F37;

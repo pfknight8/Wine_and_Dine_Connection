@@ -71,7 +71,7 @@ const WineDetails = ({ wine }) => {
       <div className="buttonHolder">
         <button className="editBtn" onClick={editClick}>Edit</button>
         <button className="deleteBtn" onClick={handleDelete}>Delete</button>
-        <button className="backBtn" onClick={goBack}>Back</button>
+        <button className="backBtn" onClick={goBack}>To Wine List</button>
       </div>
       <div className="editFormHolder">
         {editing ? <WineForm wine={wine} passedStateToggle=

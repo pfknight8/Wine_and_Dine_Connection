@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import MealForm from "../components/MealForm";
 import WineCard from "../components/wineCard";
 
-const MealDetails = ({ meal }) => {
+const MealDetails = ({ meal, handleWineSelect }) => {
   // State
   const [editing, toggleEditing] = useState(false)
   const [searchFilters, setSearchFilters] = useState({})
@@ -84,7 +84,7 @@ const MealDetails = ({ meal }) => {
       <div className="buttonHolder">
         <button className="editBtn" onClick={editClick}>Edit</button>
         <button className="deleteBtn" onClick={handleDelete}>Delete</button>
-        <button className="backBtn" onClick={goBack}>Back</button>
+        <button className="backBtn" onClick={goBack}>To Meal List</button>
         <button className="findWines" onClick={suggestWines}>Suggest Wines</button>
       </div>
       <div className="editFormHolder">
@@ -93,7 +93,7 @@ const MealDetails = ({ meal }) => {
       <div className="wineCards">
         {wineSuggestions?.map((wine, index) => (
         <div key={wine._id}>
-          <WineCard wine={wine} />
+          <WineCard wine={wine} onClick={() => handleWineSelect(wine)} />
         </div>
       ))}
       </div>

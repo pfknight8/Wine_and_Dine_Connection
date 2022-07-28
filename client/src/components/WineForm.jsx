@@ -127,10 +127,10 @@ const WineForm = ({ wine }) => {
           <label htmlFor="priceRange">Price Range: </label>
           <select className="formSelect" id="priceRange" onChange={handleDropDown} defaultValue={formBody.price_range} >
             <option value={null} aria-label="unselected">Please Select</option>
-            <option value="cheap" aria-label="cheap">"$"</option>
-            <option value="affordable" aria-label="affordable">"$$"</option>
-            <option value="expensive" aria-label="expensive">"$$$"</option>
-            <option value="thousands" aria-label="thousands">"$K"</option>
+            <option value="value" aria-label="value">"$"</option>
+            <option value="premium" aria-label="premium">"$$"</option>
+            <option value="luxury" aria-label="luxury">"$$$"</option>
+            <option value="icon" aria-label="icon">"$$$$"</option>
           </select>
         </div>
         <button type="submit" >Submit</button>

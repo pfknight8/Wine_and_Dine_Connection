@@ -13,7 +13,7 @@ const main = async () => {
       country: "USA",
       region: "Napa",
       sweetness: "Medium",
-      price_range: "cheap",
+      price_range: "value",
       image: "",
     },
     {
@@ -24,7 +24,7 @@ const main = async () => {
       country: "Germany",
       region: "Mosel",
       sweetness: "Dry",
-      price_range: "affordable",
+      price_range: "premium",
       image: "",
     },
   ]

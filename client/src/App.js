@@ -37,7 +37,6 @@ const App = () => {
     <div className="App">
       <NavBar />
       <main>
-        <p>This is where the pages will render.</p>
         <Routes>
           <Route path="/" element={ <Home handleMealSelect={handleMealSelect} /> } />
           <Route path="/about" element={ <About /> } />

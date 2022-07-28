@@ -24,6 +24,7 @@ const Home = (props) => {
   //Render (return)
   return (
     <div className="homePage">
+      <p>Welcome to the Wine and Dine Connection! Here you can browse a selection of wines and meals.</p>
       <div id="searchBtns">
         <button id="searchWine" onClick={handleNavClick}>Browse Wines</button>
         <button id="searchMeal" onClick={handleNavClick}>Browse Meals</button>

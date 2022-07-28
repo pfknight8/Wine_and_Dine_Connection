@@ -37,10 +37,6 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
     }
   }
 
-  // const handleReset = (e) => {
-  //   e.preventDefault()
-  //   setSearchFilters({})
-  // }
 console.log(searchFilters.sweetness)
   return (
     <div className="filters">
@@ -63,8 +59,8 @@ console.log(searchFilters.sweetness)
         <label htmlFor="region">Region: </label>
         <input className="filterField" id="region" onChange={handleFormChange}></input>
         <label htmlFor="sweetness">Sweetness: </label>
-        <select className="filterSelect" id="sweetness" onChange={handleDropDown} defaultValue={1}>
-          <option value={1} aria-label="unselected">Select</option>
+        <select className="filterSelect" id="sweetness" onChange={handleDropDown} defaultValue={null}>
+          <option value={null} aria-label="unselected">Select</option>
           <option value="Dry">Dry</option>
           <option value="Off-Dry">Off-Dry</option>
           <option value="Medium">Medium</option>
@@ -74,12 +70,11 @@ console.log(searchFilters.sweetness)
         <label htmlFor="priceRange">Price Range: </label>
         <select className="filterSelect" id="priceRange" onChange={handleDropDown}>
           <option value={null} aria-label="unselected">Select</option>
-          <option value="cheap" aria-label="cheap">"$"</option>
-          <option value="affordable" aria-label="affordable">"$$"</option>
-          <option value="expensive" aria-label="expensive">"$$$"</option>
-          <option value="thousands" aria-label="thousands">"$K"</option>
+          <option value="value" aria-label="value">"$"</option>
+          <option value="premium" aria-label="premium">"$$"</option>
+          <option value="luxury" aria-label="luxury">"$$$"</option>
+          <option value="icon" aria-label="icon">"$$$$"</option>
         </select>
-        {/* <button type="reset" className="resetSearch">Reset</button> */}
       </form>
     </div>
   )

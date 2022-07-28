@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios";
 
-const WineForm = ({wine, passedStateToggle}) => {
+const WineForm = ({ wine }) => {
   // Try to write generic first to see if can be used for both edit and update.
   let initialFormState = wine
   // {wine ? initialFormState = wine : initialFormState = { name: "", description: "", varietal: "", category: "", country: "", region: "", sweetness: "", price_range: "", image: "" }}
@@ -63,7 +63,6 @@ const WineForm = ({wine, passedStateToggle}) => {
       try {
         await axios.post(`http://localhost:3001/wines`, formBody)
         setFormBody({})
-        // passedStateToggle(false)
         navigate('/')
       } catch (error) {
         console.log('Error!')

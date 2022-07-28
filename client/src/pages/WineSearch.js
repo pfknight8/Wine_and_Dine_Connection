@@ -9,6 +9,7 @@ const WineSearch = ({handleWineSelect}) => {
   const [wines, setWines] = useState([])
   const [adding, toggleAdding] = useState(false)
   const [searchFilters, setSearchFilters] = useState({})
+  const [filtering, toggleFiltering] = useState(false)
   //useEffects
   useEffect(() => {
     const getWines = async () => {
@@ -32,21 +33,35 @@ const WineSearch = ({handleWineSelect}) => {
         alert("Something went egregiously wrong!")
     }
   }
-  
-  // Not doing anything, but here until I can figure it out...
-  const passedStateToggle = (bool) => {
-    toggleAdding(bool)
-  }
 
+  const filterClick = (e) => {
+    // Renders WineFilterBar and swaps the button as a reset.
+    switch(e.target.innerHTML) {
+      case "Filter Search":
+        toggleFiltering(true)
+        e.target.innerHTML = "Reset Filters"
+        break
+      case "Reset Filters":
+        e.target.innerHTML = "Filter Search"
+        toggleFiltering(false)
+        setSearchFilters({})
+        break
+      default:
+        alert("Something went egregiously wrong!")
+    }
+  }
   // // Write the functions that adjust the search results based on selected keys
   //Render (return)
   return (
     <div className="wineSearchPage">
-      <button id="newWineBtn" onClick={addClick}>Add a Wine</button>
-      <div id="searchOptions">
-        <WineFilterBar searchFilters={searchFilters} setSearchFilters={setSearchFilters}/>
+      <div className='btnHolders'>
+        <button id="filterBtn" onClick={filterClick}>Filter Search</button>
+        <button id="newWineBtn" onClick={addClick}>Add a Wine</button>
       </div>
-      {adding ? <WineForm wine={{}} passedStateToggle={passedStateToggle}/> : wines.map((wine, index) => (
+      <div id="searchOptions">
+        {filtering ? <WineFilterBar searchFilters={searchFilters} setSearchFilters={setSearchFilters}/> : null}
+      </div>
+      {adding ? <WineForm wine={{}} /> : wines.map((wine, index) => (
         <div key={wine._id}>
           <WineCard wine={wine} onClick={() => handleWineSelect(wine)}/>
         </div>

@@ -37,14 +37,14 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
     }
   }
 
-  const handleReset = (e) => {
-    e.preventDefault()
-    setSearchFilters({})
-  }
+  // const handleReset = (e) => {
+  //   e.preventDefault()
+  //   setSearchFilters({})
+  // }
 console.log(searchFilters.sweetness)
   return (
     <div className="filters">
-      <form className="filterBar" onReset={handleReset}>
+      <form className="filterBar">
         <label htmlFor="name">Name: </label>
         <input className="filterField" id="name" onChange={handleFormChange} defaultValue="" ></input>
         <label htmlFor="varietal">Varietal: </label>
@@ -79,7 +79,7 @@ console.log(searchFilters.sweetness)
           <option value="expensive" aria-label="expensive">"$$$"</option>
           <option value="thousands" aria-label="thousands">"$K"</option>
         </select>
-        <button type="reset" className="resetSearch">Reset</button>
+        {/* <button type="reset" className="resetSearch">Reset</button> */}
       </form>
     </div>
   )

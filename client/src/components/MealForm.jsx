@@ -40,8 +40,15 @@ const MealForm = ({meal}) => {
       case "category":
         setFormBody({...formBody, category: dropItem})
         break
-      case "sweetness":
-        let newProps = {...wineProps, sweetness: dropItem}
+      case "mealSweetness":
+        let sweetOptions = e.target.options
+        let optionArr = []
+        for (let i=0; i<sweetOptions.length; i++) {
+          if (sweetOptions[i].selected && sweetOptions[i].value !== "") {
+            optionArr.push(sweetOptions[i].value)
+          }
+        }
+        let newProps = {...wineProps, sweetness: optionArr}
         setFormBody({...formBody, wine_pairs: newProps})
         break
       default:
@@ -99,9 +106,8 @@ const MealForm = ({meal}) => {
           <textarea className="formField" id="description" onChange={handleFormChange} defaultValue={formBody.description}></textarea>
         </div>
         <div className="formDiv">
-          <label htmlFor="wine_pairs">Wine Pairing: </label>
           <label htmlFor="sweetness">Sweetness: </label>
-          <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.wine_pairs.sweetness} >
+          <select className="formSelect" id="mealSweetness" multiple size={6} onChange={handleDropDown} defaultValue={formBody.wine_pairs.sweetness} >
             <option value={null} aria-label="unselected"></option>
             <option value="Dry">Dry</option>
             <option value="Off-Dry">Off-Dry</option>

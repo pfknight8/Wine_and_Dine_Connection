@@ -36,8 +36,7 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
         alert("Something went wrong with dropdown menu!")
     }
   }
-
-console.log(searchFilters.sweetness)
+  
   return (
     <div className="filters">
       <form className="filterBar">

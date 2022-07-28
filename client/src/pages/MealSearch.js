@@ -2,19 +2,22 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import MealCard from '../components/mealCard'
 import MealForm from '../components/MealForm'
+import MealFilterBar from '../components/MealFilterBar'
 
 const MealSearch = ({handleMealSelect}) => {
   // State
   const [meals, setMeals] = useState([])
   const [adding, toggleAdding] = useState(false)
+  const [searchFilters, setSearchFilters] = useState({})
+  const [filtering, toggleFiltering] = useState(false)
   //useEffects
   useEffect(() => {
     const getMeals = async () => {
-      const res = await axios.get('http://localhost:3001/meals/mealCards')
+      const res = await axios.get('http://localhost:3001/meals/mealCards', {params: searchFilters})
       setMeals(res.data.meals)
     }
     getMeals()
-  },[adding])
+  },[searchFilters])
   // Functions
   const addClick = (e) => {
     console.log(e.target.innerHTML)
@@ -31,12 +34,32 @@ const MealSearch = ({handleMealSelect}) => {
         alert("Something went egregiously wrong!")
     }
   }
+
+  const filterClick = (e) => {
+    // Renders WineFilterBar and swaps the button as a reset.
+    switch(e.target.innerHTML) {
+      case "Filter Search":
+        toggleFiltering(true)
+        e.target.innerHTML = "Reset Filters"
+        break
+      case "Reset Filters":
+        e.target.innerHTML = "Filter Search"
+        toggleFiltering(false)
+        setSearchFilters({})
+        break
+      default:
+        alert("Something went egregiously wrong!")
+    }
+  }
   // Render (return)
   return (
     <div className="mealSearchPage">
-      <button id="newMealBtn" onClick={addClick}>Add a Meal</button>
+      <div className='btnHolders'>
+        <button id="filterBtn" onClick={filterClick}>Filter Search</button>
+        <button id="newMealBtn" onClick={addClick}>Add a Meal</button>
+      </div>
       <div id="searchOptions">
-        <button>Search By:</button>
+        {filtering ? <MealFilterBar searchFilters={searchFilters} setSearchFilters={setSearchFilters}/> : null}
       </div>
       {adding ? <MealForm meal={{}} /> : meals.map((meal, index) => (
         <div key={meal._id}>

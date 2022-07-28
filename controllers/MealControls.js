@@ -11,9 +11,10 @@ const placeMeal = async (req, res) => {
   }
 }
 
-const getAllMeals = async (req, res) => {
+const getFilteredMeals = async (req, res) => {
   try {
-    let meals = await Meal.find({})
+    let mealQuery = await req.query
+    let meals = await Meal.find(mealQuery)
     return res.status(200).json({ meals })
   } catch (error) {
     return res.status(500).send(error.message)
@@ -57,7 +58,7 @@ const deleteMeal = async (req, res) => {
 
 module.exports = {
   placeMeal,
-  getAllMeals,
+  getFilteredMeals,
   getMeal,
   updateMeal,
   deleteMeal

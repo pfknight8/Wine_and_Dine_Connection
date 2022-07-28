@@ -16,7 +16,7 @@ router.delete('/wines/:id', WineController.deleteWine)
 // Routes for the meals page
 router.post('/meals', MealController.placeMeal)
 
-router.get('/meals/mealCards', MealController.getAllMeals)
+router.get('/meals/mealCards', MealController.getFilteredMeals)
 
 router.get('meals/:id', MealController.getMeal)
 

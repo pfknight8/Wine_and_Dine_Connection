@@ -72,10 +72,10 @@ const MealForm = ({meal}) => {
           <label htmlFor="category">Category: </label>
           <select className="formSelect" id="category" onChange={handleDropDown} defaultValue={formBody.category} >
             <option value={null} aria-label="unselected">Please Select</option>
-            <option value="appetizer">Appetizer</option>
-            <option value="dinner">Dinner</option>
-            <option value="main_course">Main Course</option>
-            <option value="cheeses">Cheese Board</option>
+            <option value="Appetizer">Appetizer</option>
+            <option value="Palate Cleanser">Palate Cleanser</option>
+            <option value="Main Course">Main Course</option>
+            <option value="Cheeses">Cheese Board</option>
             <option value="Dessert">Dessert</option>
           </select>
         </div>

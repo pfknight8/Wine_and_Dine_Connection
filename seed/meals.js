@@ -8,7 +8,7 @@ const main = async () => {
     {
       name: "A meal",
       description: "Oh, a tasty meal!",
-      category: "Main course",
+      category: "Main Course",
       image: "",
       wine_pairs: ""
     },

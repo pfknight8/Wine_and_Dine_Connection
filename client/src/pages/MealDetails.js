@@ -2,13 +2,32 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MealForm from "../components/MealForm";
+import WineCard from "../components/wineCard";
 
 const MealDetails = ({ meal }) => {
   // State
   const [editing, toggleEditing] = useState(false)
+  const [searchFilters, setSearchFilters] = useState({})
+  const [wineSuggestions, setWineSuggestions] = useState([])
   
   const navigate = useNavigate()
   // useEffects
+  useEffect(() => {
+    let varietalList = meal.wine_pairs.varietals
+    let searchParams = {sweetness: meal.wine_pairs.sweetness, varietal: varietalList}
+    console.log(searchParams)
+    setSearchFilters(searchParams)
+    setWineSuggestions([])
+  },[])
+
+  const suggestWines = (e) => {
+    e.preventDefault()
+    const getWines = async () => {
+      const res = await axios.get('http://localhost:3001/wines/winelist', {params: searchFilters})
+      setWineSuggestions(res.data.wines)
+    }
+    getWines()
+  }
   // Functions
   const editClick = (e) => {
     console.log(e.target.innerHTML)
@@ -66,9 +85,17 @@ const MealDetails = ({ meal }) => {
         <button className="editBtn" onClick={editClick}>Edit</button>
         <button className="deleteBtn" onClick={handleDelete}>Delete</button>
         <button className="backBtn" onClick={goBack}>Back</button>
+        <button className="findWines" onClick={suggestWines}>Suggest Wines</button>
       </div>
       <div className="editFormHolder">
         {editing ? <MealForm meal={meal} /> : null}
+      </div>
+      <div className="wineCards">
+        {wineSuggestions?.map((wine, index) => (
+        <div key={wine._id}>
+          <WineCard wine={wine} />
+        </div>
+      ))}
       </div>
     </div>
   )

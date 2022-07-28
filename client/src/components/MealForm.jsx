@@ -40,7 +40,7 @@ const MealForm = ({meal}) => {
         break
       case "sweetness":
         let newProps = {...wineProps, sweetness: dropItem}
-        setFormBody({...formBody, wine_pairs: [newProps]})
+        setFormBody({...formBody, wine_pairs: newProps})
         break
       default:
         alert("Something is wrong with dropdown menu!")
@@ -98,7 +98,7 @@ const MealForm = ({meal}) => {
         <div className="formDiv">
           <label htmlFor="wine_pairs">Wine Pairing: </label>
           <label htmlFor="sweetness">Sweetness: </label>
-          <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.sweetness} >
+          <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.wine_pairs.sweetness} >
             <option value={null} aria-label="unselected">Please Select</option>
             <option value="Dry">Dry</option>
             <option value="Off-Dry">Off-Dry</option>

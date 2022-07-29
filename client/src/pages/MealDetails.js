@@ -67,13 +67,13 @@ const MealDetails = ({ meal, handleWineSelect }) => {
     <div className="mealDetails">
       <h1>{meal.name}</h1>
       <div className="img-content">
-        {meal.image ? <img scr={meal.image} alt={meal.name} /> : null}
+        {meal.image ? <img className="mealImg" src={meal.image} alt={meal.name} /> : null}
       </div>
       <h2>Details</h2>
       <p>{meal.description}</p>
       <p>Category: {meal.category}</p>
       <h3>Suggested Wines Qualities:</h3>
-      <p>Sweetness level: {meal.wine_pairs.sweetness}</p>
+      <p>Sweetness level: {meal.wine_pairs.sweetness.map(sweetness => (<span> {sweetness}, </span>))}</p>
       <p>Varietals:</p>
       <ul className="infoList">
         {meal.wine_pairs.varietals.map((varietal) => (

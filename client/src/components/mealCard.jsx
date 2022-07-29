@@ -6,7 +6,7 @@ const MealCard = ({ meal, onClick }) => {
   return (
     <div className="mealCard">
       <div className="img-content">
-        {meal.image ? <img scr={meal.image} alt={meal.name} /> : null}
+        {meal.image ? <img className="mealCardImg" src={meal.image} alt={meal.name} /> : null}
       </div>
       <div className="infoBox">
         <h2>Title: {meal.name}</h2>

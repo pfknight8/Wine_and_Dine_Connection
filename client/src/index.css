@@ -1,11 +1,18 @@
 body {
-  background-color: #404040;
+  background-color: #F7E7CE;
 }
 
 a {
   padding: 0 10px;
-  color: maroon;
+  color: #F7E7CE;
 }
 a:hover {
-  font-style: italic;
+  font-weight: bold;
+}
+
+#siteBannerImg {
+  object-fit: cover;
+  object-position: 50% 55%;
+  max-height: 350px;
+  width: 100%;
 }

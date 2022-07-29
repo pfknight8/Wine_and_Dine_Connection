@@ -98,7 +98,7 @@ const WineForm = ({ wine }) => {
             <option value={null} aria-label="unselected">Please Select</option>
             <option value="Red">Red</option>
             <option value="White">White</option>
-            <option value="Blush/Rose">Blush/Rose</option>
+            <option value="Rose">Rose</option>
             <option value="Sparkling">Sparkling</option>
             <option value="Dessert">Dessert</option>
           </select>

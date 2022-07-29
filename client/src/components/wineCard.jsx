@@ -1,7 +1,7 @@
 const WineCard = ({ wine, onClick }) => {
   //
   return (
-    <div className="wineCard">
+    <div className={`wineCard ${wine.category}Card`}>
       <div className="img-content">
         {wine.image ? <img className="wineCardImg" src={wine.image} alt={wine.name} /> : null}
       </div>

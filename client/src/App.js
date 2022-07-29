@@ -35,6 +35,7 @@ const App = () => {
   //Render (return)
   return (
     <div className="App">
+      <img id='siteBannerImg' src='https://cdn.pixabay.com/photo/2016/11/29/05/07/cheese-platter-1867456_1280.jpg' alt="wine and cheese board"/>
       <NavBar />
       <main>
         <Routes>

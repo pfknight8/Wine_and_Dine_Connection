@@ -27,7 +27,7 @@ button {
   color:#F7E7CE
 }
 
-.editBtn:hover, .deleteBtn:hover {
+.editBtn:hover, .deleteBtn:hover, .backBtn:hover, .findWines:hover {
   border-bottom: 2px solid #823F47;
   border-left: 2px solid #621F27;
   border-top: 2px solid #621F27;
@@ -53,11 +53,34 @@ label {
   width: 40%;
 }
 
-.wineCard {
-  border: 2px solid black;
+.wineCardImg, .mealCardImg {
+  max-width: 200px;
+  max-height: 200px;
+  border: solid 2px black;
 }
 
-.wineDetails {
+.cardHolder {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.wineCard, .mealCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  margin: 10px;
+  padding: 5px;
+  height: 400px;
+}
+
+.wineImg, .mealImg {
+  max-width: 80vw;
+  max-height: 60vh;
+}
+
+.wineDetails, .mealDetails {
   border: 2px solid black;
 }
 

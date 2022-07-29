@@ -18,7 +18,7 @@ router.post('/meals', MealController.placeMeal)
 
 router.get('/meals/mealCards', MealController.getFilteredMeals)
 
-router.get('meals/:id', MealController.getMeal)
+router.get('/meals/:id', MealController.getMeal)
 
 router.put('/meals/:id', MealController.updateMeal)
 

@@ -60,11 +60,13 @@ const MealSearch = ({handleMealSelect}) => {
       <div id="searchOptions">
         {filtering ? <MealFilterBar searchFilters={searchFilters} setSearchFilters={setSearchFilters}/> : null}
       </div>
+      <div className="cardHolder">
       {adding ? <MealForm meal={{wine_pairs: {}}} /> : meals.map((meal, index) => (
         <div key={meal._id}>
           <MealCard meal={meal} onClick={() => handleMealSelect(meal)}/>
         </div>
       ))}
+      </div>
     </div>
   )
 }

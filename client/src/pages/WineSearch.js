@@ -61,11 +61,11 @@ const WineSearch = ({handleWineSelect}) => {
       <div id="searchOptions">
         {filtering ? <WineFilterBar searchFilters={searchFilters} setSearchFilters={setSearchFilters}/> : null}
       </div>
+      <div className="cardHolder">
       {adding ? <WineForm wine={{}} /> : wines.map((wine, index) => (
-        <div key={wine._id}>
-          <WineCard wine={wine} onClick={() => handleWineSelect(wine)}/>
-        </div>
+        <WineCard wine={wine} onClick={() => handleWineSelect(wine)}/>
       ))}
+      </div>
     </div>
   )
 }

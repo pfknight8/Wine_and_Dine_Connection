@@ -3,7 +3,7 @@ const WineCard = ({ wine, onClick }) => {
   return (
     <div className="wineCard">
       <div className="img-content">
-        {wine.image ? <img scr={wine.image} alt={wine.name} /> : null}
+        {wine.image ? <img className="wineCardImg" src={wine.image} alt={wine.name} /> : null}
       </div>
       <div className="infoBox">
         <h2>{wine.name}</h2>

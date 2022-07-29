@@ -91,10 +91,8 @@ const MealDetails = ({ meal, handleWineSelect }) => {
       </div>
       <div className="wineCards">
         {wineSuggestions?.map((wine, index) => (
-        <div key={wine._id}>
           <WineCard wine={wine} onClick={() => handleWineSelect(wine)} />
-        </div>
-      ))}
+        ))}
       </div>
     </div>
   )

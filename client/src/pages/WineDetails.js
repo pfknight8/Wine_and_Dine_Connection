@@ -54,9 +54,10 @@ const WineDetails = ({ wine }) => {
   // Render (return)
   return (
     <div className="wineDetails">
-      <h1>Howdy!</h1>
+      <h1>Wine Details</h1>
+      <p>For the purposes of this website, the price ranges are : value = $0 - $14.99, premium = $15 - $49.99, luxury = $50 - $199.99, and icon $200+</p>
       <div className="img-content">
-        {wine.image ? <img scr={wine.image} alt={wine.name} /> : null}
+        {wine.image ? <img className="wineImg" src={wine.image} alt={wine.name} /> : null}
       </div>
       <h3>{wine.name}</h3>
       <p>{wine.description}</p>

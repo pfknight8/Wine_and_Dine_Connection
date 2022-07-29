@@ -1,5 +1,5 @@
 .App {
-  color: #36454F;
+  color: #2f2516;
 }
 
 header {
@@ -53,10 +53,14 @@ label {
   width: 40%;
 }
 
+ul {
+  list-style: none;
+}
+
 .wineCardImg, .mealCardImg {
   max-width: 200px;
   max-height: 200px;
-  border: solid 2px #36454F;
+  border: solid 1px #2f2516;
   border-radius: 5px;
 }
 
@@ -70,7 +74,7 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid #36454F;
+  border: 2px solid #2f2516;
   border-radius: 20px;
   margin: 10px;
   padding: 5px;
@@ -83,7 +87,31 @@ label {
 }
 
 .wineDetails, .mealDetails {
-  border: 2px solid #36454F;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+#mealInfo, #wineInfo {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#mealOptions, #wineOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textHolder {
+  margin: 10px;
+}
+
+#mealWines {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .infoCard {
@@ -94,7 +122,7 @@ label {
   padding: 5px;
   width: 60vw;
   max-width: 400px;
-  border: 2px solid #36454F;
+  border: 2px solid #2f2516;
   border-radius: 10px;
 }
 
@@ -141,22 +169,27 @@ label {
   background-color: #621F27;
 }
 
-.SparklingCard {
+.SparklingCard, .CheesesCard {
   color:#000000;
   background-color: #7B7554;
 }
 
-.WhiteCard {
+.WhiteCard, .AppetizerCard {
   color: #F7E7CE;
   background-color: #446644;
 }
 
-.RoseCard {
-  color: #36454F;
-  background-color: #C08497;
+.RoseCard, .PalateCleanserCard {
+  color: #2f2516;
+  background-color: #C090A0;
 }
 
 .DessertCard {
-  color: #C08497;
-  background-color: #382818;
+  color: #F7E7CE;
+  background-color: #19180A;
+}
+
+.MainCourseCard {
+  color: #F7E7CE;
+  background-color: #6D98BA;
 }

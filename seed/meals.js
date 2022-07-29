@@ -9,19 +9,19 @@ const main = async () => {
       name: "Cheeseburger",
       description: "American standard fare.",
       category: "Main Course",
-      image: "",
+      image: "https://cdn.pixabay.com/photo/2015/09/18/10/11/burger-945321_1280.jpg",
       wine_pairs: {
         sweetness: ["Dry", "Medium", "Off-Dry"],
         varietals: ["Merlot", "Cabernet Sauvignon", "Grenache", "Malbec", "Zinfandel", "Chardonney", "Brut"],
       },
     },
     {
-      name: "Bread Pudding",
-      description: "A tasty after meal treat!",
+      name: "Bananas Foster Bread Pudding",
+      description: "A delicious way to end an evening meal.",
       category: "Dessert",
-      image: "",
+      image: "https://i.imgur.com/0YFaa3H.jpeg",
       wine_pairs: {
-        sweetness: [""],
+        sweetness: ["Sweet", "Very-Sweet"],
         varietals: ["Tawny Port"],
       },
     },
@@ -63,6 +63,16 @@ const main = async () => {
       wine_pairs: {
         sweetness: ["Dry", "Off-Dry", "Medium"],
         varietals: ["Gewurztraminer", "Gruner Veltliner", "Chardonney", "Riesling", "Syrah", "Prosecco", "Sauvignon Blanc", "Sangiovese"],
+      },
+    },
+    {
+      name: "Lime Sorbet",
+      description: "A light and refreshing sorbet, perfect as a followup to fatty foods.",
+      category: "Palate Cleanser",
+      image: "https://cdn.pixabay.com/photo/2014/06/22/16/06/lime-sorbet-374726_1280.jpg",
+      wine_pairs: {
+        sweetness: ["Off-Dry", "Medium", "Sweet", "Very-Sweet"],
+        varietals: ["Prosecco", "Extra-Dry", "Demi-Sec", "Sekt"],
       },
     },
   ]

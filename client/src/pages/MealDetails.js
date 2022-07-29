@@ -64,36 +64,49 @@ const MealDetails = ({ meal, handleWineSelect }) => {
   }
   // Render (return)
   return (
-    <div className="mealDetails">
-      <h1>{meal.name}</h1>
-      <div className="img-content">
-        {meal.image ? <img className="mealImg" src={meal.image} alt={meal.name} /> : null}
+    <div>
+      <div className="mealDetails">
+        <section id='mealInfo'>
+          <h1>{meal.name}</h1>
+          <div className="img-content">
+            {meal.image ? <img className="mealImg" src={meal.image} alt={meal.name} /> : null}
+          </div>
+          <h2>Details</h2>
+          <p>{meal.description}</p>
+          <p>Category: {meal.category}</p>
+          <h3>Suggested Wines Qualities:</h3>
+          <p>Sweetness level: {meal.wine_pairs.sweetness.map(sweetness => (<span> {sweetness}, </span>))}</p>
+          <p>Varietals:</p>
+          <ul className="infoList">
+            {meal.wine_pairs.varietals.map((varietal) => (
+              <li>{varietal}</li>
+            ))}
+          </ul>
+        </section>
+        <aside id='mealOptions'>
+          <h2>Page Controls</h2>
+          <div className="buttonHolder">
+            <button className="editBtn" onClick={editClick}>Edit</button>
+            <button className="deleteBtn" onClick={handleDelete}>Delete</button>
+            <button className="backBtn" onClick={goBack}>To Meal List</button>
+            <button className="findWines" onClick={suggestWines}>Wine Pairings</button>
+          </div>
+          <div className="textHolder">
+            <p>See something wrong? Use the edit button to apply corrections.</p>
+            <p>Broken beyond reapair? Inappropriate in some way? Use delete to remove this entry entirely.</p>
+            <p>Want to return to the meal list? There's that option, as well.</p>
+            <p>If you desire a list of wine recommedations, click wine pairings and the results will display below!</p>
+          </div>
+          <div className="editFormHolder">
+            {editing ? <MealForm meal={meal} /> : null}
+          </div>
+        </aside>
       </div>
-      <h2>Details</h2>
-      <p>{meal.description}</p>
-      <p>Category: {meal.category}</p>
-      <h3>Suggested Wines Qualities:</h3>
-      <p>Sweetness level: {meal.wine_pairs.sweetness.map(sweetness => (<span> {sweetness}, </span>))}</p>
-      <p>Varietals:</p>
-      <ul className="infoList">
-        {meal.wine_pairs.varietals.map((varietal) => (
-          <li>{varietal}</li>
-        ))}
-      </ul>
-      <div className="buttonHolder">
-        <button className="editBtn" onClick={editClick}>Edit</button>
-        <button className="deleteBtn" onClick={handleDelete}>Delete</button>
-        <button className="backBtn" onClick={goBack}>To Meal List</button>
-        <button className="findWines" onClick={suggestWines}>Suggest Wines</button>
-      </div>
-      <div className="editFormHolder">
-        {editing ? <MealForm meal={meal} /> : null}
-      </div>
-      <div className="wineCards">
+      <section id='mealWines'>
         {wineSuggestions?.map((wine, index) => (
           <WineCard wine={wine} onClick={() => handleWineSelect(wine)} />
         ))}
-      </div>
+      </section>
     </div>
   )
 }

@@ -4,7 +4,7 @@ const MealCard = ({ meal, onClick }) => {
   // Functions
   // Render (return)
   return (
-    <div className="mealCard">
+    <div className={`mealCard ${meal.category.split(" ").join('')}Card`}>
       <div className="img-content">
         {meal.image ? <img className="mealCardImg" src={meal.image} alt={meal.name} /> : null}
       </div>

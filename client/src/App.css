@@ -48,8 +48,7 @@ button:hover {
 }
 
 label {
-  display: inline; 
-  margin-right: 10px;
+  display: inline;
   width: 40%;
 }
 
@@ -147,10 +146,17 @@ ul {
   text-align: center;
 }
 
+#searchOptions {
+  margin: 0 auto;
+}
 .filterBar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   flex-direction: row;
   align-items: center;
+}
+.fBarItem {
+  margin: 0 auto;
 }
 
 .filterField {

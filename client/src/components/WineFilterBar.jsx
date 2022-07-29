@@ -24,13 +24,31 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
     let dropItem = e.target.value
     switch(e.target.id) {
       case "category":
-        setSearchFilters({...searchFilters, category: dropItem})
+        if (dropItem !== 'Select') {
+          setSearchFilters({...searchFilters, category: dropItem})
+        } else {
+          let tempFilters = {...searchFilters}
+          delete tempFilters.category
+          setSearchFilters(tempFilters)
+        }
         break
       case "sweetness":
-        setSearchFilters({...searchFilters, sweetness: dropItem})
+        if (dropItem !== 'Select') {
+          setSearchFilters({...searchFilters, sweetness: dropItem})
+        } else {
+          let tempFilters = {...searchFilters}
+          delete tempFilters.sweetness
+          setSearchFilters(tempFilters)
+        }
         break
       case "priceRange":
-        setSearchFilters({...searchFilters, price_range: dropItem})
+        if (dropItem !== 'Select') {
+          setSearchFilters({...searchFilters, price_range: dropItem})
+        } else {
+          let tempFilters = {...searchFilters}
+          delete tempFilters.price_range
+          setSearchFilters(tempFilters)
+        }
         break
       default:
         alert("Something went wrong with dropdown menu!")
@@ -38,12 +56,16 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
   }
   
   return (
-    <div className="filters">
-      <form className="filterBar">
+    <form className="filterBar">
+      <div className="fBarItem">
         <label htmlFor="name">Name: </label>
         <input className="filterField" id="name" onChange={handleFormChange} defaultValue="" ></input>
+      </div>
+      <div className="fBarItem">
         <label htmlFor="varietal">Varietal: </label>
         <input className="filterField" id="varietal" onChange={handleFormChange}></input>
+      </div>
+      <div className="fBarItem">
         <label htmlFor="category">Category: </label>
         <select className="filterSelect" id="category" onChange={handleDropDown}>
           <option value={null} aria-label="unselected">Select</option>
@@ -53,10 +75,16 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
           <option value="Sparkling">Sparkling</option>
           <option value="Dessert">Dessert</option>
         </select>
+      </div>
+      <div className="fBarItem">
         <label htmlFor="country">Country: </label>
         <input className="filterField" id="country" onChange={handleFormChange}></input>
+      </div>
+      <div className="fBarItem">
         <label htmlFor="region">Region: </label>
         <input className="filterField" id="region" onChange={handleFormChange}></input>
+      </div>
+      <div className="fBarItem">
         <label htmlFor="sweetness">Sweetness: </label>
         <select className="filterSelect" id="sweetness" onChange={handleDropDown} defaultValue={null}>
           <option value={null} aria-label="unselected">Select</option>
@@ -66,6 +94,8 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
           <option value="Sweet">Sweet</option>
           <option value="Very-Sweet">Very Sweet</option>
         </select>
+      </div>
+      <div className="fBarItem">
         <label htmlFor="priceRange">Price Range: </label>
         <select className="filterSelect" id="priceRange" onChange={handleDropDown}>
           <option value={null} aria-label="unselected">Select</option>
@@ -74,8 +104,8 @@ const WineFilterBar = ({ searchFilters, setSearchFilters }) => {
           <option value="luxury" aria-label="luxury">"$$$"</option>
           <option value="icon" aria-label="icon">"$$$$"</option>
         </select>
-      </form>
-    </div>
+      </div>
+    </form>
   )
 }
 

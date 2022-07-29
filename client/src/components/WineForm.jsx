@@ -82,7 +82,6 @@ const WineForm = ({ wine }) => {
 
   return (
     <div id="wineForm">
-      <p>Instruct them.</p>
       <form className="infoCard" onSubmit={handleSubmit}>
         <div className="formDiv">
           <label htmlFor="name">Name: </label>
@@ -118,7 +117,7 @@ const WineForm = ({ wine }) => {
         <div className="formDiv">
           <label htmlFor="sweetness">Sweetness: </label>
           <select className="formSelect" id="sweetness" onChange={handleDropDown} defaultValue={formBody.sweetness} >
-            <option value={null} aria-label="unselected">Please Select</option>
+            <option value={null} aria-label="unselected">Select</option>
             <option value="Dry">Dry</option>
             <option value="Off-Dry">Off-Dry</option>
             <option value="Medium">Medium</option>
@@ -129,7 +128,7 @@ const WineForm = ({ wine }) => {
         <div className="formDiv">
           <label htmlFor="priceRange">Price Range: </label>
           <select className="formSelect" id="priceRange" onChange={handleDropDown} defaultValue={formBody.price_range} >
-            <option value={null} aria-label="unselected">Please Select</option>
+            <option value={null} aria-label="unselected">Select</option>
             <option value="value" aria-label="value">"$"</option>
             <option value="premium" aria-label="premium">"$$"</option>
             <option value="luxury" aria-label="luxury">"$$$"</option>

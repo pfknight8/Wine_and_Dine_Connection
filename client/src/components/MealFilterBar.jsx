@@ -6,9 +6,6 @@ const MealFilterBar = ({ searchFilters, setSearchFilters }) => {
       case "name":
         setSearchFilters({...searchFilters, name: formItem})
         break
-      case "ingredient":
-        setSearchFilters({...searchFilters, main_ingredient: formItem})
-        break
       default:
         alert("Something is wrong!")
     }
@@ -18,7 +15,13 @@ const MealFilterBar = ({ searchFilters, setSearchFilters }) => {
     let dropItem = e.target.value
     switch(e.target.id) {
       case "category":
-        setSearchFilters({...searchFilters, category: dropItem})
+        if (dropItem !== 'Select') {
+          setSearchFilters({...searchFilters, category: dropItem})
+        } else {
+          let tempFilters = {...searchFilters}
+          delete tempFilters.category
+          setSearchFilters(tempFilters)
+        }
         break
       default:
         alert("Something went wrong with dropdown menu!")
@@ -26,13 +29,13 @@ const MealFilterBar = ({ searchFilters, setSearchFilters }) => {
   }
   
   return (
-    <div className="filters">
-      <form className="filterBar">
+    <form className="filterBar">
+      <div className="fBarItem">
         <label htmlFor="name">Name: </label>
         <input className="filterField" id="name" onChange={handleFormChange} defaultValue="" ></input>
-        <label htmlFor="ingredient">Main Ingredient: </label>
-        <input className="filterField" id="ingredient" onChange={handleFormChange}></input>
-        <label htmlFor="category">Category: </label>
+      </div>
+      <div className="fBarItem">
+      <label htmlFor="category">Category: </label>
         <select className="filterSelect" id="category" onChange={handleDropDown}>
           <option value={null} aria-label="unselected">Select</option>
           <option value="Appetizer">Appetizer</option>
@@ -41,8 +44,8 @@ const MealFilterBar = ({ searchFilters, setSearchFilters }) => {
           <option value="Cheeses">Cheese Board</option>
           <option value="Dessert">Dessert</option>
         </select>
-      </form>
-    </div>
+      </div>
+    </form>
   )
 }
 

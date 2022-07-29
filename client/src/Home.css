@@ -8,3 +8,8 @@
   padding: 5px;
   border-radius: 4px;
 }
+
+#homeImg {
+  margin: 20px;
+  max-width: 75%;
+}

@@ -16,3 +16,8 @@ a:hover {
   max-height: 350px;
   width: 100%;
 }
+
+.About {
+  max-width: 90vw;
+  margin: 0 auto;
+}

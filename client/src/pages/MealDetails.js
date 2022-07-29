@@ -23,7 +23,7 @@ const MealDetails = ({ meal, handleWineSelect }) => {
   const suggestWines = (e) => {
     e.preventDefault()
     const getWines = async () => {
-      const res = await axios.get('http://localhost:3001/wineDB/wines/winelist', {params: searchFilters})
+      const res = await axios.get('/wineDB/wines/winelist', {params: searchFilters})
       setWineSuggestions(res.data.wines)
     }
     getWines()
@@ -56,7 +56,7 @@ const MealDetails = ({ meal, handleWineSelect }) => {
   
   const deleteWine = async (meal) => {
     try {
-      await axios.delete(`http://localhost:3001/wineDB/meals/${meal._id}`)
+      await axios.delete(`/wineDB/meals/${meal._id}`)
       navigate('/meals')
     } catch (error) {
       alert("Unable to delete item!")

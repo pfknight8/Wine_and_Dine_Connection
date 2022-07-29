@@ -40,7 +40,7 @@ const WineDetails = ({ wine }) => {
   const deleteWine = async (wine) => {
     try {
       // const { id } = wine.params
-      await axios.delete(`http://localhost:3001/wineDB/wines/${wine._id}`)
+      await axios.delete(`/wineDB/wines/${wine._id}`)
       navigate('/wines')
     } catch (error) {
       alert("Unable to delete item!")

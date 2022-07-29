@@ -66,7 +66,7 @@ const MealForm = ({meal}) => {
     //Will perform database function, reset state, and navigate back (or toggle editing)
     if (formBody._id === undefined) {
       try {
-        await axios.post(`http://localhost:3001/wineDB/meals`, formBody)
+        await axios.post(`/wineDB/meals`, formBody)
         setFormBody({wine_pairs:{}})
         navigate('/')
       } catch (error) {
@@ -74,7 +74,7 @@ const MealForm = ({meal}) => {
       }
     } else {
       try {
-        await axios.put(`http://localhost:3001/wineDB/meals/${formBody._id}`, formBody)
+        await axios.put(`/meals/${formBody._id}`, formBody)
         navigate('/meals')
       } catch (error) {
         console.log('Error!')

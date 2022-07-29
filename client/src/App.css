@@ -82,8 +82,9 @@ ul {
 }
 
 .wineImg, .mealImg {
-  max-width: 80vw;
+  max-width: 80%;
   max-height: 60vh;
+  align-self: center;
 }
 
 .wineDetails, .mealDetails {
@@ -93,7 +94,7 @@ ul {
 }
 
 #mealInfo, #wineInfo {
-  margin: 10px;
+  margin: 10px auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

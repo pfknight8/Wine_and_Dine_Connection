@@ -68,9 +68,7 @@ const MealDetails = ({ meal, handleWineSelect }) => {
       <div className="mealDetails">
         <section id='mealInfo'>
           <h1>{meal.name}</h1>
-          <div className="img-content">
-            {meal.image ? <img className="mealImg" src={meal.image} alt={meal.name} /> : null}
-          </div>
+          {meal.image ? <img className="mealImg" src={meal.image} alt={meal.name} /> : null}
           <h2>Details</h2>
           <p>{meal.description}</p>
           <p>Category: {meal.category}</p>

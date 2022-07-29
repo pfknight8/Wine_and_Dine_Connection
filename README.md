@@ -56,3 +56,5 @@
 ## Credits
 
 ### [MERN deployment instructions](https://github.com/SEI-R-6-21/deployment_MERN) for 'MERN' logo.
+
+#### other images from imgur, pexels, pixabay. Wine info on totalwines, vivino

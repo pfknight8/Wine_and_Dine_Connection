@@ -40,7 +40,7 @@
 
 ## Screenshots
 
-<img src="WineandDineScreenshot1" alt="screenshot" width="450"/>
+<img src="WineandDineScreenshot1.png" alt="screenshot" width="450"/>
 
 ---
 

@@ -27,7 +27,7 @@ button {
   text-align: center;
 }
 
-button:hover {
+button:active {
   border-bottom: 2px solid #823F47;
   border-left: 2px solid #621F27;
   border-top: 2px solid #621F27;

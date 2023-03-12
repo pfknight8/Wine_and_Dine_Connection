@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { WineController, MealController } = require('../controllers')
+const { WineController, MealController, UserController } = require('../controllers')
 const router = Router()
 
 // Routes for the wines page
@@ -23,5 +23,9 @@ router.get('/meals/:id', MealController.getMeal)
 router.put('/meals/:id', MealController.updateMeal)
 
 router.delete('/meals/:id', MealController.deleteMeal)
+
+// Routes for Users
+router.post('/register', UserController.createUser)
+router.post('/login', UserController.loginUser)
 
 module.exports = router

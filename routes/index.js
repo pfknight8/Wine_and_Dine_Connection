@@ -25,7 +25,8 @@ router.put('/meals/:id', MealController.updateMeal)
 router.delete('/meals/:id', MealController.deleteMeal)
 
 // Routes for Users
-router.post('/register', UserController.createUser)
-router.post('/login', UserController.loginUser)
+router.post('/users/register', UserController.createUser)
+router.post('/users/login', UserController.loginUser)
+router.delete('/users/:id', UserController.deleteUser)
 
 module.exports = router

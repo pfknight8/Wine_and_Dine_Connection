@@ -1,5 +1,4 @@
-const { Schema, default: mongoose } = require('mongoose')
-const bcrypt = require("bcrypt")
+const { Schema } = require('mongoose')
 
 const UserSchema = new Schema(
   {
@@ -7,12 +6,7 @@ const UserSchema = new Schema(
     first_name: {type: String, required: true},
     last_name: {type: String, required: true},
     email: {type: String, required: true},
-    roles: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        role: "Role"
-      }
-    ],
+    role: {type: String, enum: ["standard", "admin", "owner"], default: "standard"},
     password: {type: String, required: true}
   },
   { timestamps: true }

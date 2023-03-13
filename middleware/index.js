@@ -19,13 +19,30 @@ const createToken = async (payload) => {
 }
 
 const verifyToken = async (req, res, next) => {
-  //
-  return 0;
+  const { token } = res.locals
+  try {
+    let payload = jwt.verify(token, APP_SECRET);
+    if (payload) {
+      return next();
+    } else {
+      return res.status(401).send({ status: 'Error', msg: 'Unauthorized' });
+    }
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
 }
 
+// This function is here to be used for adding authentication over protected routes. Will be adding this into routes, such as "router.post('/', middleware.stripToken, middleware.verifyToken, controller.CreatePost)"
 const stripToken = async (req, res, next) => {
-  //
-  return 0;
+  try {
+    const token = req.headers['authorization'].split(' ')[1];
+    if (token) {
+      res.locals.token = token;
+      return next();
+    }
+  } catch (error) {
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' });
+  }
 }
 
 module.exports = {

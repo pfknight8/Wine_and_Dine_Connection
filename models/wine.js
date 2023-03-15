@@ -10,7 +10,8 @@ const WineSchema = new Schema(
     region: { type: String, required: true },
     sweetness: { type: String, required: true },
     price_range: { type: String, required: true },
-    image: {type: String, required: false }
+    image: {type: String, required: false },
+    user_posted: {type: Schema.Types.ObjectId, ref: "User"}
   },
   { timestamps: true }
 )

@@ -10,6 +10,7 @@ const MealSchema = new Schema(
       sweetness: [{ type: String, required: false }],
       varietals: [{ type: String, required: false }],
     },
+    user_posted: {type: Schema.Types.ObjectId, ref: "User"}
   },
   { timestamps: true }
 )

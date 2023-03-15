@@ -6,6 +6,7 @@ import WineSearch from "./pages/WineSearch";
 import WineDetails from "./pages/WineDetails";
 import MealSearch from "./pages/MealSearch";
 import MealDetails from "./pages/MealDetails";
+import UserEntryPage from "./pages/UserEntry";
 import NavBar from "./components/NavBar";
 import "./App.css";
 import { useState } from "react";
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/wines" element={ <WineSearch handleWineSelect={handleWineSelect} /> } />
           <Route path="/meals/:mealId" element={ <MealDetails meal={mealSelect} handleWineSelect={handleWineSelect} /> } />
           <Route path="/meals" element={ <MealSearch handleMealSelect={handleMealSelect}/> } />
+          <Route path="/userEntry" element={ <UserEntryPage /> } />
         </Routes>
       </main>
     </div>
